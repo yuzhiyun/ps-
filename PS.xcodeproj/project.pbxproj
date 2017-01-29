@@ -15,6 +15,7 @@
 		CD7FFDC51E3E3894003DE455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7FFDC31E3E3894003DE455 /* LaunchScreen.storyboard */; };
 		CD7FFDD01E3E3894003DE455 /* PSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDCF1E3E3894003DE455 /* PSTests.m */; };
 		CD7FFDDB1E3E3894003DE455 /* PSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDDA1E3E3894003DE455 /* PSUITests.m */; };
+		CD7FFDEB1E3E3B09003DE455 /* ParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		CD7FFDD61E3E3894003DE455 /* PSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7FFDDA1E3E3894003DE455 /* PSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSUITests.m; sourceTree = "<group>"; };
 		CD7FFDDC1E3E3894003DE455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD7FFDE91E3E3B09003DE455 /* ParameterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterTableViewController.h; sourceTree = "<group>"; };
+		CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		CD7FFDB41E3E3894003DE455 /* PS */ = {
 			isa = PBXGroup;
 			children = (
+				CD7FFDE81E3E3ACB003DE455 /* parameter */,
 				CD7FFDB81E3E3894003DE455 /* AppDelegate.h */,
 				CD7FFDB91E3E3894003DE455 /* AppDelegate.m */,
 				CD7FFDBB1E3E3894003DE455 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				CD7FFDDC1E3E3894003DE455 /* Info.plist */,
 			);
 			path = PSUITests;
+			sourceTree = "<group>";
+		};
+		CD7FFDE81E3E3ACB003DE455 /* parameter */ = {
+			isa = PBXGroup;
+			children = (
+				CD7FFDE91E3E3B09003DE455 /* ParameterTableViewController.h */,
+				CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */,
+			);
+			name = parameter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +220,7 @@
 				TargetAttributes = {
 					CD7FFDB11E3E3894003DE455 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F36KV5ER57;
+						DevelopmentTeam = 4YFU9633V4;
 						ProvisioningStyle = Automatic;
 					};
 					CD7FFDCA1E3E3894003DE455 = {
@@ -277,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD7FFDBD1E3E3894003DE455 /* ViewController.m in Sources */,
+				CD7FFDEB1E3E3B09003DE455 /* ParameterTableViewController.m in Sources */,
 				CD7FFDBA1E3E3894003DE455 /* AppDelegate.m in Sources */,
 				CD7FFDB71E3E3894003DE455 /* main.m in Sources */,
 			);
@@ -425,8 +439,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F36KV5ER57;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4YFU9633V4;
 				INFOPLIST_FILE = PS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.csu.PS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,8 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F36KV5ER57;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4YFU9633V4;
 				INFOPLIST_FILE = PS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.csu.PS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
