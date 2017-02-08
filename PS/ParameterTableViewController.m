@@ -7,7 +7,7 @@
 //
 
 #import "ParameterTableViewController.h"
-
+#import "AppDelegate.h"
 @interface ParameterTableViewController ()
 
 @end
@@ -20,6 +20,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"查看参数";
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    [self.navigationController.navigationBar setBarTintColor:myDelegate.navigationBarColor];
+    //      navigationBar标题颜色
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,nil]];
+    
+    //    返回箭头和文字的颜色，只要写一次就行了，是全局的
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //    修改下一个界面返回按钮的title，注意这行代码每个页面都要写一遍，不是全局的
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.tableView.contentInset=UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     
     keyArray=[[NSMutableArray alloc]init];

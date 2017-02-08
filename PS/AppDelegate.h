@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    
+    
+    UIColor *navigationBarColor;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic,strong)UIColor *navigationBarColor;
 
 @end
 
