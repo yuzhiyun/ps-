@@ -278,6 +278,9 @@
                                 <state key="normal" title="停车（Stop）">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stop:" destination="Ip8-QN-ISs" eventType="touchUpInside" id="Ffk-Qg-Etv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et0-NT-cEn">
                                 <rect key="frame" x="71.5" y="223" width="232" height="30"/>
@@ -289,6 +292,9 @@
                                 <state key="normal" title="报警（Alarm）">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="alarm:" destination="Ip8-QN-ISs" eventType="touchUpInside" id="6uh-U5-R8F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lko-SP-Lvj">
                                 <rect key="frame" x="71.5" y="286" width="232" height="30"/>
@@ -296,6 +302,9 @@
                                 <state key="normal" title="报警复位（AlarmClear）">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="alarmclear:" destination="Ip8-QN-ISs" eventType="touchUpInside" id="os3-Fi-jl2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

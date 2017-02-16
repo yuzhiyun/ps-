@@ -9,6 +9,12 @@
 #import "MethodControlViewController.h"
 #import "AppDelegate.h"
 #import "CmdHistoryUITableViewController.h"
+#import "AppDelegate.h"
+#import "AFNetworking.h"
+#import "JsonUtil.h"
+#import "Alert.h"
+#import "Parameter.h"
+#import "CmdHistory.h"
 @interface MethodControlViewController ()
 
 @end
@@ -63,5 +69,79 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)stop:(id)sender {
+     [self loadData:@"Stop"];
+}
+- (IBAction)alarm:(id)sender {
+    [self loadData:@"Alarm"];
+}
+
+- (IBAction)alarmclear:(id)sender {
+     [self loadData:@"AlarmClear"];
+}
+
+//获取参数
+-(void) loadData:(NSString *)command{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    ///ps.leideng.org/index.php/User/App/submitCMD.html?comname=Alarm&username=lei
+    NSString *urlString= [NSString stringWithFormat:@"%@/submitCMD.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    // 请求参数
+    NSDictionary *parameters = @{
+                                 @"username":@"lei",
+                                 @"comname":command
+                                  };
+    
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                
+                if([@"1" isEqualToString:[[doc objectForKey:@"data"]objectForKey:@"tag" ]])
+                    
+                    [Alert showMessageAlert:@"执行命令成功" view:self];
+                else
+                    [Alert showMessageAlert:@"执行失败" view:self];
+                    
+                    
+                
+              
+                
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
+
+
+
 
 @end
