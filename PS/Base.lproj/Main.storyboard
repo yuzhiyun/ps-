@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,7 +69,8 @@
                     <connections>
                         <segue destination="KgW-Pm-edF" kind="relationship" relationship="viewControllers" id="LRh-AJ-pKQ"/>
                         <segue destination="TAB-1y-T0K" kind="relationship" relationship="viewControllers" id="fkO-yV-iaG"/>
-                        <segue destination="TN3-QT-Qdo" kind="relationship" relationship="viewControllers" id="T1F-BY-KEh"/>
+                        <segue destination="NDm-oo-zMC" kind="relationship" relationship="viewControllers" id="fNi-mn-qyZ"/>
+                        <segue destination="sQC-es-c6s" kind="relationship" relationship="viewControllers" id="n83-tK-g2Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSS-rN-sd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oA-Jp-VCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="2043"/>
+            <point key="canvasLocation" x="612" y="2075"/>
         </scene>
         <!--Me View Controller-->
         <scene sceneID="nkD-wV-sUc">
@@ -183,7 +185,7 @@
                                 <color key="textColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="邓磊老师" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKC-k7-UGG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*****" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKC-k7-UGG">
                                 <rect key="frame" x="171" y="149" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -197,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWV-8t-1DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="2042"/>
+            <point key="canvasLocation" x="2857" y="2075"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bdI-E1-jJR">
@@ -253,26 +255,102 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMt-cw-QkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="1286"/>
+            <point key="canvasLocation" x="612" y="1286"/>
         </scene>
-        <!--我的-->
-        <scene sceneID="wNg-GQ-AZN">
+        <!--Method Control View Controller-->
+        <scene sceneID="PsB-Fb-lsd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TN3-QT-Qdo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="wode.png" selectedImage="wode_1.png" id="eCL-d7-pjB"/>
+                <viewController storyboardIdentifier="MethodControlViewController" id="Ip8-QN-ISs" customClass="MethodControlViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vro-Wb-tVz"/>
+                        <viewControllerLayoutGuide type="bottom" id="dsz-pt-xTe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AGM-3S-i5X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-kV-8rf">
+                                <rect key="frame" x="71.5" y="160" width="232" height="30"/>
+                                <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="停车（Stop）">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et0-NT-cEn">
+                                <rect key="frame" x="71.5" y="223" width="232" height="30"/>
+                                <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="pcp-tK-p4L"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="sqR-6d-cHQ"/>
+                                </constraints>
+                                <state key="normal" title="报警（Alarm）">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lko-SP-Lvj">
+                                <rect key="frame" x="71.5" y="286" width="232" height="30"/>
+                                <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="报警复位（AlarmClear）">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="et0-NT-cEn" firstAttribute="top" secondItem="EQ7-kV-8rf" secondAttribute="bottom" constant="33" id="Ktp-kF-ZDS"/>
+                            <constraint firstItem="EQ7-kV-8rf" firstAttribute="width" secondItem="AGM-3S-i5X" secondAttribute="width" multiplier="0.618" id="TpR-Yo-z9a"/>
+                            <constraint firstItem="Lko-SP-Lvj" firstAttribute="width" secondItem="et0-NT-cEn" secondAttribute="width" id="bQZ-87-tqb"/>
+                            <constraint firstItem="Lko-SP-Lvj" firstAttribute="centerX" secondItem="AGM-3S-i5X" secondAttribute="centerX" id="eVy-oZ-u8g"/>
+                            <constraint firstItem="Lko-SP-Lvj" firstAttribute="top" secondItem="et0-NT-cEn" secondAttribute="bottom" constant="33" id="hAt-SJ-lt4"/>
+                            <constraint firstItem="EQ7-kV-8rf" firstAttribute="centerX" secondItem="AGM-3S-i5X" secondAttribute="centerX" id="k8t-oO-L9o"/>
+                            <constraint firstItem="et0-NT-cEn" firstAttribute="centerX" secondItem="EQ7-kV-8rf" secondAttribute="centerX" id="qoO-ep-Iwx"/>
+                            <constraint firstItem="et0-NT-cEn" firstAttribute="width" secondItem="EQ7-kV-8rf" secondAttribute="width" id="t79-sV-fnT"/>
+                            <constraint firstItem="EQ7-kV-8rf" firstAttribute="top" secondItem="vro-Wb-tVz" secondAttribute="bottom" constant="96" id="wcA-ap-YOQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xrH-4c-wVc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmw-kA-OKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728.8" y="2074.8125937031487"/>
+        </scene>
+        <!--命令控制-->
+        <scene sceneID="hHL-H4-M8U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NDm-oo-zMC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="命令控制" image="xiaoyuan.png" selectedImage="xiaoyuan_1.png" id="9ow-JT-fv0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GXp-bA-J6b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ccm-aP-4jB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2YZ-oQ-wbB" kind="relationship" relationship="rootViewController" id="ghY-Xi-E0x"/>
+                        <segue destination="Ip8-QN-ISs" kind="relationship" relationship="rootViewController" id="inK-l0-pjS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gmV-XQ-yMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNL-4r-DTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="1286"/>
+            <point key="canvasLocation" x="1730" y="1286"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="1ZB-rS-7Mg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sQC-es-c6s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="wode.png" selectedImage="wode_1.png" id="hOT-mX-ZFx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rUo-UJ-CFU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2YZ-oQ-wbB" kind="relationship" relationship="rootViewController" id="cLb-Id-4lb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOe-1S-Wtc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2857" y="1286"/>
         </scene>
     </scenes>
     <resources>
@@ -282,5 +360,7 @@
         <image name="shequ_1.png" width="24" height="24"/>
         <image name="wode.png" width="24" height="24"/>
         <image name="wode_1.png" width="24" height="24"/>
+        <image name="xiaoyuan.png" width="24" height="24"/>
+        <image name="xiaoyuan_1.png" width="24" height="24"/>
     </resources>
 </document>

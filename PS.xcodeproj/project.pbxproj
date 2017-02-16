@@ -46,6 +46,7 @@
 		CD7FFDD01E3E3894003DE455 /* PSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDCF1E3E3894003DE455 /* PSTests.m */; };
 		CD7FFDDB1E3E3894003DE455 /* PSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDDA1E3E3894003DE455 /* PSUITests.m */; };
 		CD7FFDEB1E3E3B09003DE455 /* ParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */; };
+		CDF2EF671E55443E00A499AE /* MethodControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EF661E55443E00A499AE /* MethodControlViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		CD7FFDDC1E3E3894003DE455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7FFDE91E3E3B09003DE455 /* ParameterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterTableViewController.h; sourceTree = "<group>"; };
 		CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterTableViewController.m; sourceTree = "<group>"; };
+		CDF2EF651E55443E00A499AE /* MethodControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodControlViewController.h; sourceTree = "<group>"; };
+		CDF2EF661E55443E00A499AE /* MethodControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodControlViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,7 @@
 		CD7FFDB41E3E3894003DE455 /* PS */ = {
 			isa = PBXGroup;
 			children = (
+				CDF2EF641E55442900A499AE /* MethodControl */,
 				CD7D5ED91E4ABF600082CF37 /* changeTrend */,
 				CD7D5ED51E4ABB9C0082CF37 /* me */,
 				CD7D5EA11E4AB4A60082CF37 /* login */,
@@ -324,6 +328,15 @@
 				CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */,
 			);
 			name = parameter;
+			sourceTree = "<group>";
+		};
+		CDF2EF641E55442900A499AE /* MethodControl */ = {
+			isa = PBXGroup;
+			children = (
+				CDF2EF651E55443E00A499AE /* MethodControlViewController.h */,
+				CDF2EF661E55443E00A499AE /* MethodControlViewController.m */,
+			);
+			name = MethodControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +499,7 @@
 				CD7FFDBD1E3E3894003DE455 /* ViewController.m in Sources */,
 				CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */,
 				CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */,
+				CDF2EF671E55443E00A499AE /* MethodControlViewController.m in Sources */,
 				CD7D5EDC1E4ABFBA0082CF37 /* TendencyChartViewController.m in Sources */,
 				CD7FFDEB1E3E3B09003DE455 /* ParameterTableViewController.m in Sources */,
 				CD7D5EED1E4AC0470082CF37 /* WSLineChartView.m in Sources */,

@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     self.title=@"变化趋势";
+    //水位
     
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
     [self.navigationController.navigationBar setBarTintColor:myDelegate.navigationBarColor];
@@ -33,15 +34,19 @@
     
     NSMutableArray *xArray = [NSMutableArray array];
     NSMutableArray *yArray = [NSMutableArray array];
+    
     for (NSInteger i = 0; i < 50; i++) {
         [xArray addObject:@"06:35"];
         [yArray addObject:[NSString stringWithFormat:@"%.2lf",50.0+arc4random_uniform(50)]];
     }
+    
     double  alignTop=self.navigationController.navigationBar.bounds.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height;
+    
     double  height=self.view.frame.size.height-self.navigationController.navigationBar.bounds.size.height-[[UIApplication sharedApplication] statusBarFrame].size.height-self.tabBarController.tabBar.bounds.size.height;
     
-    
     WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, alignTop, self.view.frame.size.width, height) xTitleArray:xArray yValueArray:yArray yMax:100 yMin:0];
+    
+    
     [self.view addSubview:wsLine];
 }
 
