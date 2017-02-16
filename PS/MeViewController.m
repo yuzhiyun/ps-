@@ -8,6 +8,7 @@
 
 #import "MeViewController.h"
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 @interface MeViewController ()
 
 @end
@@ -32,6 +33,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)logOut:(id)sender {
+    
+    LoginViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    nextPage.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:nextPage animated:YES];
+    
 }
 
 /*

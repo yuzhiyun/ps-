@@ -8,6 +8,10 @@
 
 #import "ParameterTableViewController.h"
 #import "AppDelegate.h"
+#import "AFNetworking.h"
+#import "JsonUtil.h"
+#import "Alert.h"
+#import "Parameter.h"
 @interface ParameterTableViewController ()
 
 @end
@@ -15,6 +19,8 @@
 @implementation ParameterTableViewController{
     NSMutableArray *keyArray;
     NSMutableArray *valueArray;
+    NSMutableArray *mAllDataFromServer;
+    UITableView *mUITableView;
 
 }
 
@@ -33,6 +39,8 @@
     self.tableView.contentInset=UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     
     keyArray=[[NSMutableArray alloc]init];
+    mAllDataFromServer=[[NSMutableArray alloc]init];
+    
     [keyArray addObject:@"驱动电机转速"];
     [keyArray addObject:@"驱动电机扭矩"];
     [keyArray addObject:@"驱动电机功率"];
@@ -90,6 +98,8 @@
     [valueArray addObject:@"13.42 ºC"];
 
     
+    [self loadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,8 +108,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [keyArray count];
+    mUITableView=tableView;
+    return [mAllDataFromServer count];
 }
 
 
@@ -109,10 +119,13 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     }
+    
+    Parameter *model=[mAllDataFromServer objectAtIndex:indexPath.row];
+    
     UILabel *mUILabelKey=[cell viewWithTag:0];
-    mUILabelKey.text=[keyArray objectAtIndex:indexPath.row];
+    mUILabelKey.text=model.p_name;
     UILabel *mUILabelValue=[cell viewWithTag:1];
-    mUILabelValue.text=[valueArray objectAtIndex:indexPath.row];
+    mUILabelValue.text=model.p_value;
     
     return cell;
 }
@@ -161,5 +174,63 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//获取参数
+-(void) loadData{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=1
+    NSString *urlString= [NSString stringWithFormat:@"%@/showParameter.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+   // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    // 请求参数
+    NSDictionary *parameters = @{ @"psid":@"10"
+                                  };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                NSArray *array=[doc objectForKey:@"data"];
+                for(NSDictionary *item in array){
+                    Parameter *model=[[Parameter alloc]init];
+                    model.p_name=item [@"p_name"];
+                    model.p_value=item[@"p_value"];
+                    [mAllDataFromServer addObject:model
+                     ];
+                }
+                [mUITableView reloadData];
+            }
+            else{
+                        [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
+
+
 
 @end

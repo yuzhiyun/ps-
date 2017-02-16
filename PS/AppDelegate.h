@@ -12,10 +12,12 @@
     
     
     UIColor *navigationBarColor;
+     NSString *ipString;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,strong)UIColor *navigationBarColor;
 
+@property (nonatomic,strong)NSString *ipString;
 @end
 

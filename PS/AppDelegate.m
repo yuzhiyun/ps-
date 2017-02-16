@@ -21,6 +21,9 @@
 
     
     myDelegate.navigationBarColor=[UIColor colorWithRed:44/255.0 green:191/255.0 blue:242/255.0 alpha:1.0];
+    
+    
+    myDelegate.ipString=@"http://ps.leideng.org/index.php/User/App";
     return YES;
 }
 
