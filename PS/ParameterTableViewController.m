@@ -126,6 +126,9 @@
     mUILabelKey.text=model.p_name;
     UILabel *mUILabelValue=[cell viewWithTag:1];
     mUILabelValue.text=model.p_value;
+    UILabel *mUILabelUnit=[cell viewWithTag:2];
+    mUILabelUnit.text=model.p_unit;
+    
     
     return cell;
 }
@@ -207,6 +210,7 @@
                     Parameter *model=[[Parameter alloc]init];
                     model.p_name=item [@"p_name"];
                     model.p_value=item[@"p_value"];
+                    model.p_unit=item[@"p_unit"];
                     [mAllDataFromServer addObject:model
                      ];
                 }
