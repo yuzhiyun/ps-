@@ -205,6 +205,7 @@
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]])
             {
+                [mAllDataFromServer removeAllObjects];
                 NSArray *array=[doc objectForKey:@"data"];
                 for(NSDictionary *item in array){
                     Parameter *model=[[Parameter alloc]init];
@@ -215,6 +216,15 @@
                      ];
                 }
                 [mUITableView reloadData];
+                
+                //模拟1秒后（
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self loadData];
+                });
+                
+                
+                
+                
             }
             else{
                         [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
