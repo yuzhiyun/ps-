@@ -92,7 +92,8 @@
     // 请求参数
     NSDictionary *parameters = @{
                                  @"username":@"lei",
-                                 @"comname":command
+                                 @"comname":command,
+                                 @"psid":@"10"
                                   };
     
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
