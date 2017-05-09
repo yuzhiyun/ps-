@@ -19,6 +19,7 @@
 		CD3552A31EC0222500B33545 /* OtherControllerPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552A21EC0222500B33545 /* OtherControllerPageViewController.m */; };
 		CD3552A71EC023AB00B33545 /* MotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552A61EC023AB00B33545 /* MotorViewController.m */; };
 		CD3552AB1EC14E6300B33545 /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552AA1EC14E6300B33545 /* GearViewController.m */; };
+		CD3552AF1EC1F0C100B33545 /* LoadMotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */; };
 		CD7D5EA41E4AB4BF0082CF37 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */; };
 		CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA91E4AB60E0082CF37 /* MainViewController.m */; };
 		CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5ED71E4ABBB50082CF37 /* MeViewController.m */; };
@@ -123,6 +124,8 @@
 		CD3552A61EC023AB00B33545 /* MotorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotorViewController.m; sourceTree = "<group>"; };
 		CD3552A91EC14E6300B33545 /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
 		CD3552AA1EC14E6300B33545 /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
+		CD3552AD1EC1F0C100B33545 /* LoadMotorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMotorViewController.h; sourceTree = "<group>"; };
+		CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMotorViewController.m; sourceTree = "<group>"; };
 		CD7D5EA21E4AB4BF0082CF37 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CD7D5EA81E4AB60E0082CF37 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -313,6 +316,7 @@
 		CD35529F1EC021DD00B33545 /* otherControll */ = {
 			isa = PBXGroup;
 			children = (
+				CD3552AC1EC1F08F00B33545 /* loadMotor */,
 				CD3552A81EC14E2700B33545 /* gearControll */,
 				CD3552A41EC0236B00B33545 /* motorController */,
 				CD3552A01EC021FE00B33545 /* pageController */,
@@ -345,6 +349,15 @@
 				CD3552AA1EC14E6300B33545 /* GearViewController.m */,
 			);
 			name = gearControll;
+			sourceTree = "<group>";
+		};
+		CD3552AC1EC1F08F00B33545 /* loadMotor */ = {
+			isa = PBXGroup;
+			children = (
+				CD3552AD1EC1F0C100B33545 /* LoadMotorViewController.h */,
+				CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */,
+			);
+			name = loadMotor;
 			sourceTree = "<group>";
 		};
 		CD7D5E9D1E4AB27A0082CF37 /* mainTabBar */ = {
@@ -865,6 +878,7 @@
 				CDF2F1601E5689C500A499AE /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				CDF2F1611E5689C500A499AE /* UIAlertView+AFNetworking.m in Sources */,
 				CDF2EFB41E5547AB00A499AE /* MJRefreshFooterView.m in Sources */,
+				CD3552AF1EC1F0C100B33545 /* LoadMotorViewController.m in Sources */,
 				CDF2EFD91E55613800A499AE /* CmdHistory.m in Sources */,
 				CDF2F15D1E5689C500A499AE /* AFURLResponseSerialization.m in Sources */,
 				CDF2EFB31E5547AB00A499AE /* MJRefreshConst.m in Sources */,

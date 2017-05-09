@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "MotorViewController.h"
 #import "GearViewController.h"
+#import "LoadMotorViewController.h"
 @interface OtherControllerPageViewController ()
 
 @end
@@ -22,7 +23,8 @@
     self = [super initWithCoder:aDecoder];
     
     NSMutableArray *title=[[NSMutableArray alloc]init];
-    [title addObject:@"电机控制"];
+    [title addObject:@"驱动电机"];
+    [title addObject:@"负载电机"];
     [title addObject:@"温度控制"];
     [title addObject:@"换挡"];
     // [title addObject:@"活动"];
@@ -36,7 +38,7 @@
     //    };
     if(self) {
         self.menuHeight = 35;
-        self.menuItemWidth = 75;
+       // self.menuItemWidth = 75;
         self.menuViewStyle = WMMenuViewStyleLine;
         //        self.titles = [NSArray arrayWithObjects:@"读文说史", @"教育智慧",@"分类3",@"分类4",@"分类5", nil];
         self.titles=title;
@@ -85,12 +87,15 @@
     
     MotorViewController *controller0 = (MotorViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MotorViewController"];
     
+    
+    LoadMotorViewController *controller1 = (LoadMotorViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoadMotorViewController"];
+    
     GearViewController *controller2 = (GearViewController *)[storyboard instantiateViewControllerWithIdentifier:@"GearViewController"];
     
     if(index==0)
          return controller0;
     else if(index==1)
-        return controller0;
+        return controller1;
     else //if(index==2)
         return controller2;
 }
