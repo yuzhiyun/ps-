@@ -216,7 +216,7 @@
         
         NSString *result=[JsonUtil DataTOjsonString:responseObject];
         NSLog(@"***************返回结果***********************");
-        NSLog(result);
+        //NSLog(result);
         NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
         NSError *error=[[NSError alloc]init];
         NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];

@@ -330,16 +330,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-Xa-8LL">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-Xa-8LL">
                                         <rect key="frame" x="6" y="52" width="278" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="mUISliderValueChanged:" destination="OFd-G5-YlF" eventType="valueChanged" id="H8O-QK-c6j"/>
+                                        </connections>
                                     </slider>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHt-uZ-zPx">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EHt-uZ-zPx">
                                         <rect key="frame" x="233" y="115" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="mUISwitchReverseValueChanged:" destination="OFd-G5-YlF" eventType="valueChanged" id="agi-Fd-fFe"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="给定负载 0 % " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-54-jXv">
-                                        <rect key="frame" x="17" y="23" width="128" height="21"/>
+                                        <rect key="frame" x="17" y="23" width="265" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -355,10 +361,21 @@
                                 <state key="normal" title="给  定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ok:" destination="OFd-G5-YlF" eventType="touchUpInside" id="Kf5-tw-FJY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mUIImageViewN1" destination="KAQ-3A-rCn" id="1Cb-RG-9kP"/>
+                        <outlet property="mUIImageViewP1" destination="noB-Md-cmD" id="t7e-8r-jKj"/>
+                        <outlet property="mUILabelLoadPercent" destination="3Pg-54-jXv" id="FUv-cv-TrP"/>
+                        <outlet property="mUISliderLoad" destination="CFh-Xa-8LL" id="EmY-gE-ljX"/>
+                        <outlet property="mUISwitchReverse" destination="EHt-uZ-zPx" id="kbd-HT-aV6"/>
+                        <outlet property="mUITextFieldSlopeTime" destination="cD8-KA-sdw" id="RiD-U1-bMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNV-iE-SVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
