@@ -153,7 +153,7 @@
                                  @"lo1_reverse":sReverse1,
                                  @"lo2_reverse":sReverse2,
                                  @"lo1_value":[NSString stringWithFormat:@"%d", load1],
-                                 @"lo2_value":[NSString stringWithFormat:@"%d", load2],
+                                 @"lo2_value":[NSString stringWithFormat:@"%d", load2]
                                  
                                  };
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
