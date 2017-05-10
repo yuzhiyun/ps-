@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T6Q-u4-Z29" id="FC9-dg-COR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vi7-wB-9cS">
@@ -426,9 +426,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jOZ-F3-Y4s">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jOZ-F3-Y4s">
                                         <rect key="frame" x="6" y="37" width="278" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onSlider1ValueChanged:" destination="HL1-qK-Oc6" eventType="valueChanged" id="Ps4-zm-JBX"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="给定负载 0 % " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fii-gZ-03Q">
                                         <rect key="frame" x="8" y="8" width="128" height="21"/>
@@ -437,9 +440,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bca-ed-dqg">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bca-ed-dqg">
                                         <rect key="frame" x="233" y="80" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onSwitch1ValueChanged:" destination="HL1-qK-Oc6" eventType="valueChanged" id="bRm-Mt-mjL"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -469,9 +475,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-K8-T9D">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-K8-T9D">
                                         <rect key="frame" x="6" y="37" width="278" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onSlider2ValueChanged:" destination="HL1-qK-Oc6" eventType="valueChanged" id="xUC-Nz-tFz"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="给定负载 0 % " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVF-ab-siE">
                                         <rect key="frame" x="8" y="8" width="128" height="21"/>
@@ -480,9 +489,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-f6-c3Q">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-f6-c3Q">
                                         <rect key="frame" x="233" y="69" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onSwitch2ValueChanged:" destination="HL1-qK-Oc6" eventType="valueChanged" id="XSz-AK-S2z"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -515,10 +527,24 @@
                                 <state key="normal" title="给  定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ok:" destination="HL1-qK-Oc6" eventType="touchUpInside" id="68e-L5-uP6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mUIImageViewN1" destination="cZj-DG-WbJ" id="IcN-2i-5wq"/>
+                        <outlet property="mUIImageViewP1" destination="3Zt-oL-5aH" id="RHR-Uh-DfQ"/>
+                        <outlet property="mUILabelLoad1Percent" destination="fii-gZ-03Q" id="d6q-uU-P3I"/>
+                        <outlet property="mUILabelLoad2Percent" destination="RVF-ab-siE" id="kT6-6f-1GO"/>
+                        <outlet property="mUISlider1" destination="jOZ-F3-Y4s" id="tkx-zK-ect"/>
+                        <outlet property="mUISlider2" destination="dsy-K8-T9D" id="ga5-Zp-zqJ"/>
+                        <outlet property="mUISwitch1" destination="bca-ed-dqg" id="HrA-ll-avh"/>
+                        <outlet property="mUISwitch2" destination="Fc5-f6-c3Q" id="2ZY-de-5X4"/>
+                        <outlet property="mUITextFieldSlopeTime" destination="Cag-db-XAA" id="KBH-Ex-ynP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ca5-rW-qKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -600,7 +626,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aL4-Sr-PRk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NDH-Ce-9oe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NDH-Ce-9oe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -619,7 +645,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgW-Pm-edF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="查看参数" image="daxue.png" selectedImage="daxue_1.png" id="xZ0-7g-kM9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tj4-av-9CQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tj4-av-9CQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -638,7 +664,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TAB-1y-T0K" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="参数变化" image="shequ.png" selectedImage="shequ_1.png" id="Sgw-ty-k94"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="06T-I9-tSs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="06T-I9-tSs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -740,7 +766,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HWe-Uh-Fi0" id="TDf-Sd-cu1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkK-Rw-oo5">
@@ -784,7 +810,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NDm-oo-zMC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="命令控制" image="xiaoyuan.png" selectedImage="xiaoyuan_1.png" id="9ow-JT-fv0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ccm-aP-4jB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ccm-aP-4jB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -803,7 +829,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sQC-es-c6s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="wode.png" selectedImage="wode_1.png" id="hOT-mX-ZFx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rUo-UJ-CFU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rUo-UJ-CFU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
