@@ -7,7 +7,6 @@
 //
 
 #import "MethodControlViewController.h"
-#import "AppDelegate.h"
 #import "CmdHistoryUITableViewController.h"
 #import "AppDelegate.h"
 #import "AFNetworking.h"
@@ -57,8 +56,6 @@
     CmdHistoryUITableViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"CmdHistoryUITableViewController"];
     nextPage.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:nextPage animated:YES];
-
-    
 }
 /*
 #pragma mark - Navigation
@@ -78,6 +75,12 @@
 
 - (IBAction)alarmclear:(id)sender {
      [self loadData:@"AlarmClear"];
+}
+
+
+- (IBAction)startFrequenceTransformer:(id)sender {
+    
+     [self loadData:@"StartFrequenceTransformer"];
 }
 
 //获取参数

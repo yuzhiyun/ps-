@@ -114,8 +114,6 @@
         [Alert showMessageAlert:@"斜坡时间或负载不能为0" view:self];
     else
         [self setData];
-
-    
 }
 
 
@@ -147,13 +145,13 @@
         sReverse2=@"1";
     NSDictionary *parameters = @{
                                  @"psid":@"10",
-                                 @"dr_name":driverModel,
-
-                                 @"lo_slopetime":slopeTime,
-                                 @"lo1_reverse":sReverse1,
-                                 @"lo2_reverse":sReverse2,
-                                 @"lo1_value":[NSString stringWithFormat:@"%d", load1],
-                                 @"lo2_value":[NSString stringWithFormat:@"%d", load2]
+                                 @"username":@"admin",
+                                 @"loname":driverModel,
+                                 @"loslopetime":slopeTime,
+                                 @"lo1reverse":sReverse1,
+                                 @"lo2reverse":sReverse2,
+                                 @"lo1value":[NSString stringWithFormat:@"%d", load1],
+                                 @"lo2value":[NSString stringWithFormat:@"%d", load2]
                                  
                                  };
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {

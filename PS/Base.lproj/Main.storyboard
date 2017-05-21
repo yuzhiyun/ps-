@@ -23,23 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-5f-iAh">
-                                <rect key="frame" x="67" y="216" width="241" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-Sg-WPo">
+                                <rect key="frame" x="56" y="292" width="263.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-Sg-WPo">
-                                <rect key="frame" x="67" y="286" width="241" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-KH-gj7">
-                                <rect key="frame" x="67" y="382" width="241" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-KH-gj7">
+                                <rect key="frame" x="56" y="372" width="263" height="30"/>
                                 <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="登   录">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,10 +39,40 @@
                                     <action selector="login:" destination="Rsb-vc-2Qv" eventType="touchUpInside" id="fVx-w9-V8x"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-5f-iAh">
+                                <rect key="frame" x="56" y="212" width="263" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="PQl-sC-9Z4">
+                                <rect key="frame" x="137.5" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="e0Y-7x-tKV"/>
+                                    <constraint firstAttribute="height" constant="100" id="pVz-4l-ToE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MEe-Sg-WPo" firstAttribute="top" secondItem="HVN-5f-iAh" secondAttribute="bottom" constant="50" id="4yQ-lx-blc"/>
+                            <constraint firstItem="PQl-sC-9Z4" firstAttribute="top" secondItem="AP6-dU-8Kw" secondAttribute="bottom" constant="8" id="7H9-Gd-oea"/>
+                            <constraint firstItem="iRa-KH-gj7" firstAttribute="top" secondItem="MEe-Sg-WPo" secondAttribute="bottom" constant="50" id="7ow-Uj-97x"/>
+                            <constraint firstItem="iRa-KH-gj7" firstAttribute="centerX" secondItem="kEL-Qj-7Nf" secondAttribute="centerX" id="7yM-6d-C8H"/>
+                            <constraint firstItem="HVN-5f-iAh" firstAttribute="centerX" secondItem="kEL-Qj-7Nf" secondAttribute="centerX" id="G3K-oZ-otq"/>
+                            <constraint firstItem="iRa-KH-gj7" firstAttribute="leading" secondItem="HVN-5f-iAh" secondAttribute="leading" id="NcB-5M-Qg3"/>
+                            <constraint firstItem="HVN-5f-iAh" firstAttribute="top" secondItem="PQl-sC-9Z4" secondAttribute="bottom" constant="40" id="Y9l-Ov-AA2"/>
+                            <constraint firstItem="PQl-sC-9Z4" firstAttribute="centerX" secondItem="kEL-Qj-7Nf" secondAttribute="centerX" id="jVg-H9-b3Y"/>
+                            <constraint firstItem="MEe-Sg-WPo" firstAttribute="centerX" secondItem="kEL-Qj-7Nf" secondAttribute="centerX" id="jqw-8i-CCa"/>
+                            <constraint firstItem="MEe-Sg-WPo" firstAttribute="leading" secondItem="HVN-5f-iAh" secondAttribute="leading" id="oyh-cC-5qJ"/>
+                            <constraint firstItem="HVN-5f-iAh" firstAttribute="leading" secondItem="kEL-Qj-7Nf" secondAttribute="leadingMargin" constant="40" id="vDZ-4s-yaR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XCi-xl-0eR"/>
+                    <connections>
+                        <outlet property="mUITextFieldPasswd" destination="MEe-Sg-WPo" id="ddu-wc-Xuc"/>
+                        <outlet property="mUITextFieldUsername" destination="HVN-5f-iAh" id="t5p-T8-leB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byh-xs-1rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T6Q-u4-Z29" id="FC9-dg-COR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vi7-wB-9cS">
@@ -828,10 +849,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1nz-gk-M7g">
-                                <rect key="frame" x="0.0" y="20" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="t89-Ru-e8B"/>
+                                    <constraint firstAttribute="height" constant="350" id="t89-Ru-e8B"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="nkh-mF-4m6">
@@ -955,7 +976,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-kV-8rf">
-                                <rect key="frame" x="71.5" y="160" width="232" height="30"/>
+                                <rect key="frame" x="72" y="160" width="232" height="30"/>
                                 <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="停车（Stop）">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -965,7 +986,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et0-NT-cEn">
-                                <rect key="frame" x="71.5" y="223" width="232" height="30"/>
+                                <rect key="frame" x="72" y="223" width="232" height="30"/>
                                 <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="pcp-tK-p4L"/>
@@ -979,7 +1000,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lko-SP-Lvj">
-                                <rect key="frame" x="71.5" y="286" width="232" height="30"/>
+                                <rect key="frame" x="72" y="286" width="232" height="30"/>
                                 <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="报警复位（AlarmClear）">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -989,11 +1010,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCm-3O-iM8">
-                                <rect key="frame" x="71.5" y="349" width="232" height="30"/>
+                                <rect key="frame" x="72" y="349" width="232" height="30"/>
                                 <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="启动变频器">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startFrequenceTransformer:" destination="Ip8-QN-ISs" eventType="touchUpInside" id="wia-5a-dbo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1128,6 +1152,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar.png" width="156" height="156"/>
         <image name="daxue.png" width="30" height="30"/>
         <image name="daxue_1.png" width="30" height="30"/>
         <image name="selected2.png" width="32" height="32"/>

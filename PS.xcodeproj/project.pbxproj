@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD169EB21ED17B32002FB25E /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = CD169EB11ED17B32002FB25E /* avatar.png */; };
 		CD3552731EC016D600B33545 /* IMG_0611.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CD3552721EC016D600B33545 /* IMG_0611.JPG */; };
 		CD3552781EC0185A00B33545 /* ParameterInImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */; };
 		CD35527B1EC01ECF00B33545 /* un_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3552791EC01ECF00B33545 /* un_selected.png */; };
@@ -103,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD169EB11ED17B32002FB25E /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		CD3552721EC016D600B33545 /* IMG_0611.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0611.JPG; sourceTree = "<group>"; };
 		CD3552761EC0185A00B33545 /* ParameterInImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterInImageViewController.h; sourceTree = "<group>"; };
 		CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterInImageViewController.m; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		CD7D5EAB1E4AB9DB0082CF37 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				CD169EB11ED17B32002FB25E /* avatar.png */,
 				CD3552791EC01ECF00B33545 /* un_selected.png */,
 				CD35527A1EC01ECF00B33545 /* selected2.png */,
 				CD3552721EC016D600B33545 /* IMG_0611.JPG */,
@@ -824,6 +827,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD169EB21ED17B32002FB25E /* avatar.png in Resources */,
 				CDB163A01EBF088900F11302 /* daxue@2x.png in Resources */,
 				CD7FFDC51E3E3894003DE455 /* LaunchScreen.storyboard in Resources */,
 				CDB1639B1EBF088900F11302 /* shequ_1@2x.png in Resources */,

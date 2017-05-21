@@ -66,7 +66,8 @@
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     
     // 请求参数
-    NSDictionary *parameters = @{ @"username":@"lei"
+    NSDictionary *parameters = @{
+                                 @"username":@"lei"
                                   };
     
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -84,7 +85,6 @@
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]])
             {
-                
                 NSArray *array=[doc objectForKey:@"data"];
                 for(NSDictionary *item in array){
                     CmdHistory *model=[[CmdHistory alloc]init];
@@ -99,6 +99,8 @@
             }
             else{
                 [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+                
+//                [Alert showMessageAlert:@"未知错误" view:self];
             }
         }
         else
@@ -106,7 +108,13 @@
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+         /*
+        //Error Domain=NSCocoaErrorDomain Code=3840 "Unescaped control character around character 131." UserInfo={NSDebugDescription=Unescaped control character around character 131.}
+        */
+        //服务器返回的数据不是合格的json数据
         NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        
         if(error.code==-1009)
             errorUser=@"主人，似乎没有网络喔！";
         [Alert showMessageAlert:errorUser view:self];
