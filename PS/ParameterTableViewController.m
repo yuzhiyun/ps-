@@ -13,6 +13,7 @@
 #import "Alert.h"
 #import "Parameter.h"
 #import "ParameterInImageViewController.h"
+#import "DataBaseNSUserDefaults.h"
 @interface ParameterTableViewController ()
 
 @end
@@ -208,7 +209,7 @@
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     
     // 请求参数
-    NSDictionary *parameters = @{ @"psid":@"10"
+    NSDictionary *parameters = @{ @"psid": [DataBaseNSUserDefaults getData:@"selectedPS"]
                                   };
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

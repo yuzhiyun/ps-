@@ -13,15 +13,21 @@
 #import "AFNetworking.h"
 #import "JsonUtil.h"
 #import "Alert.h"
+#import "DataBaseNSUserDefaults.h"
 @interface LoginViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation LoginViewController{
+    
+     NSMutableArray *mDataPSList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"登录";
+    
+    mDataPSList=[[NSMutableArray alloc]init];
     
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
     [self.navigationController.navigationBar setBarTintColor:myDelegate.navigationBarColor];
@@ -93,11 +99,8 @@
             NSLog(@"*****doc不为空***********");
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]]){
-                //根据storyboard id来获取目标页面
-                MainViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-                //跳转
-                [self.navigationController pushViewController:nextPage animated:YES];
-                
+                [DataBaseNSUserDefaults setData: username forkey:@"username"];
+                [self getPSList];
             }
             else{
                 [Alert showMessageAlert:@"用户名或密码不正确" view:self];
@@ -117,4 +120,89 @@
     
     
 }
+//获取台驾列表
+-(void) getPSList{
+    
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    NSString *urlString= [NSString stringWithFormat:@"%@/showPlatform.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+
+    
+    [manager POST:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        //NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]]){
+                
+                
+               
+                NSArray *array=[doc objectForKey:@"data"];
+                UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                                  initWithTitle:@"请选择台驾"
+                                                  delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  destructiveButtonTitle:nil
+                                                  otherButtonTitles:nil];
+                actionSheet.actionSheetStyle = UIBarStyleDefault;
+                
+                for(NSDictionary *item in array){
+                    [actionSheet addButtonWithTitle:item[@"ps_name"]];
+                    [mDataPSList addObject:item[@"ps_id"]];
+                }
+                
+                    [actionSheet showInView:self.view];
+
+                
+
+                
+
+                
+            }
+            else{
+                [Alert showMessageAlert:@"" view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+    
+}
+//UIActionSheet对话框选择监听事件
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    
+    //NSLog(@"选择对话框监听事件,您选择了%i",buttonIndex);
+    
+    //NSLog([grade objectAtIndex:buttonIndex]);
+    //if(buttonIndex!=[mDataSemester count]-1)
+    if(buttonIndex!=0){
+        NSLog(@"%@", [mDataPSList objectAtIndex:buttonIndex-1]);
+        [DataBaseNSUserDefaults setData: [mDataPSList objectAtIndex:buttonIndex-1] forkey:@"selectedPS"];
+        //根据storyboard id来获取目标页面
+        MainViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        //跳转
+        [self.navigationController pushViewController:nextPage animated:YES];
+         
+         
+    }
+}
+
 @end

@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-Sg-WPo">
-                                <rect key="frame" x="56" y="292" width="263.5" height="30"/>
+                                <rect key="frame" x="56" y="324" width="263.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-KH-gj7">
-                                <rect key="frame" x="56" y="372" width="263" height="30"/>
+                                <rect key="frame" x="56" y="404" width="263" height="30"/>
                                 <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="登   录">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,13 +40,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-5f-iAh">
-                                <rect key="frame" x="56" y="212" width="263" height="30"/>
+                                <rect key="frame" x="56" y="244" width="263" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="PQl-sC-9Z4">
-                                <rect key="frame" x="137.5" y="72" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="104" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="e0Y-7x-tKV"/>
                                     <constraint firstAttribute="height" constant="100" id="pVz-4l-ToE"/>
@@ -56,7 +56,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MEe-Sg-WPo" firstAttribute="top" secondItem="HVN-5f-iAh" secondAttribute="bottom" constant="50" id="4yQ-lx-blc"/>
-                            <constraint firstItem="PQl-sC-9Z4" firstAttribute="top" secondItem="AP6-dU-8Kw" secondAttribute="bottom" constant="8" id="7H9-Gd-oea"/>
+                            <constraint firstItem="PQl-sC-9Z4" firstAttribute="top" secondItem="AP6-dU-8Kw" secondAttribute="bottom" constant="40" id="7H9-Gd-oea"/>
                             <constraint firstItem="iRa-KH-gj7" firstAttribute="top" secondItem="MEe-Sg-WPo" secondAttribute="bottom" constant="50" id="7ow-Uj-97x"/>
                             <constraint firstItem="iRa-KH-gj7" firstAttribute="centerX" secondItem="kEL-Qj-7Nf" secondAttribute="centerX" id="7yM-6d-C8H"/>
                             <constraint firstItem="HVN-5f-iAh" firstAttribute="centerX" secondItem="kEL-Qj-7Nf" secondAttribute="centerX" id="G3K-oZ-otq"/>
