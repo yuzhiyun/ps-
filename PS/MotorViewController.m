@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 #import "JsonUtil.h"
 #import "Alert.h"
-
+#import "DataBaseNSUserDefaults.h"
 @interface MotorViewController ()
 
 @end
@@ -43,6 +43,8 @@
     UITapGestureRecognizer *singleTap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction2:)];
     [ self.mUIImageViewN1 addGestureRecognizer:singleTap2];
 
+    //显示之前设置过的数据
+    [self getData];
 
 }
 //单选框P1/P
@@ -144,6 +146,8 @@
                 [Alert showMessageAlert:@"设置成功" view:self];
                 
                 
+                
+                
 
             }
             else{
@@ -169,7 +173,7 @@
 -(void) getData{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
     //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=1
-    NSString *urlString= [NSString stringWithFormat:@"%@/showdrive.html",myDelegate.ipString];
+    NSString *urlString= [NSString stringWithFormat:@"%@/showDriveNumber.html",myDelegate.ipString];
     AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
     // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
@@ -187,7 +191,7 @@
     if(isReverse)
         sReverse=@"1";
     NSDictionary *parameters = @{
-                                   @"username":@"admin"
+                               @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"]
                                   };
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -195,7 +199,7 @@
         
         NSString *result=[JsonUtil DataTOjsonString:responseObject];
         NSLog(@"***************返回结果***********************");
-        //NSLog(result);
+        NSLog(result);
         NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
         NSError *error=[[NSError alloc]init];
         NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -206,10 +210,38 @@
             {
                 
                 
-               [Alert showMessageAlert:@"设置成功" view:self];
+              // [Alert showMessageAlert:@"设置成功" view:self];
                 
-                
-                
+                NSArray *array=[doc objectForKey:@"data"];
+               for(NSDictionary *item in array){
+                   NSLog(item[@"dr_name"]);
+                   NSLog(item[@"dr_value"]);
+                   NSLog(item[@"dr_slopetime"]);
+                   NSLog(item[@"dr_reverse"]);
+                   
+                   if([@"P1/P" isEqualToString:item[@"dr_name"]]){
+                       //self._mUIImageViewP1
+                       self.mUIImageViewP1.image=[UIImage imageNamed:@"selected2.png"];
+                       self.mUIImageViewN1.image=[UIImage imageNamed:@"un_selected.png"];
+                   }else{
+                       self.mUIImageViewP1.image=[UIImage imageNamed:@"un_selected.png"];
+                       self.mUIImageViewN1.image=[UIImage imageNamed:@"selected2.png"];
+                   }
+                   
+                   self.mUITextFieldSlopeTime.text=item[@"dr_slopetime"];
+                   NSString *dr_value=item[@"dr_value"];
+                   self.mUISliderLoad.value=[dr_value  floatValue];
+                   
+                   self.mUILabelLoadPercent.text=[NSString stringWithFormat:@"给定负载 %@ %@",dr_value ,@"%"];
+                   if([@"1" isEqualToString:item[@"dr_reverse"]])
+                       [self.mUISwitchReverse setOn:YES];
+                   else
+                       [self.mUISwitchReverse setOn:FALSE];
+                       
+                   
+                   
+               }
+            
             }
             else{
                 [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
