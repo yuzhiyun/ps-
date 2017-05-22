@@ -223,21 +223,31 @@
                        //self._mUIImageViewP1
                        self.mUIImageViewP1.image=[UIImage imageNamed:@"selected2.png"];
                        self.mUIImageViewN1.image=[UIImage imageNamed:@"un_selected.png"];
+                       driverModel=@"P1/P";
+                       
                    }else{
                        self.mUIImageViewP1.image=[UIImage imageNamed:@"un_selected.png"];
                        self.mUIImageViewN1.image=[UIImage imageNamed:@"selected2.png"];
+                       driverModel=@"n1/P";
                    }
                    
                    self.mUITextFieldSlopeTime.text=item[@"dr_slopetime"];
+                   slopeTime=item[@"dr_slopetime"];;
                    NSString *dr_value=item[@"dr_value"];
                    self.mUISliderLoad.value=[dr_value  floatValue];
-                   
+                   load=[dr_value  floatValue];
                    self.mUILabelLoadPercent.text=[NSString stringWithFormat:@"给定负载 %@ %@",dr_value ,@"%"];
-                   if([@"1" isEqualToString:item[@"dr_reverse"]])
+                   if([@"1" isEqualToString:item[@"dr_reverse"]]){
                        [self.mUISwitchReverse setOn:YES];
-                   else
-                       [self.mUISwitchReverse setOn:FALSE];
+                       isReverse=YES;
                        
+
+                   }
+                   else{
+                       [self.mUISwitchReverse setOn:FALSE];
+                       isReverse=FALSE;
+                   }
+                   
                    
                    
                }

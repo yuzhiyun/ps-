@@ -12,7 +12,7 @@
 #import "AFNetworking.h"
 #import "JsonUtil.h"
 #import "Alert.h"
-
+#import "DataBaseNSUserDefaults.h"
 @interface LoadMotorViewController ()
 
 @end
@@ -48,6 +48,8 @@
     self.mUIImageViewN1.userInteractionEnabled = YES;//打开用户交互
     UITapGestureRecognizer *singleTap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction2:)];
     [ self.mUIImageViewN1 addGestureRecognizer:singleTap2];
+    
+    [self getData];
     
 }
 //单选框P1/P
@@ -170,6 +172,112 @@
             if([@"0" isEqualToString:[doc objectForKey:@"code"]])
             {
                 [Alert showMessageAlert:@"设置成功" view:self];
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
+
+//获取之前的负载电机设置信息
+-(void) getData{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=1
+    NSString *urlString= [NSString stringWithFormat:@"%@/showload.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    NSDictionary *parameters = @{
+                                 @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                 };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                
+                
+                // [Alert showMessageAlert:@"设置成功" view:self];
+                
+                NSArray *array=[doc objectForKey:@"data"];
+                for(NSDictionary *item in array){
+                    
+                    
+                    //driverModel=@"P1/P";
+                    isReverse1=false;
+                    isReverse2=false;
+                    load1=0;
+                    load2=0;
+
+                    if([@"P1/P" isEqualToString:item[@"dr_name"]]){
+                        //self._mUIImageViewP1
+                        self.mUIImageViewP1.image=[UIImage imageNamed:@"selected2.png"];
+                        self.mUIImageViewN1.image=[UIImage imageNamed:@"un_selected.png"];
+                        driverModel=@"P1/P";
+                    }else{
+                        self.mUIImageViewP1.image=[UIImage imageNamed:@"un_selected.png"];
+                        self.mUIImageViewN1.image=[UIImage imageNamed:@"selected2.png"];
+                        driverModel=@"n1/P";
+                    }
+                    
+                    self.mUITextFieldSlopeTime.text=item[@"lo_slopetime"];
+                    
+                    slopeTime=item[@"lo_slopetime"];
+                    //负载1
+                    NSString *dr_value1=item[@"lo1_value"];
+                    self.mUISlider1.value=[dr_value1  floatValue];
+                    load1=[dr_value1  floatValue];
+                    self.mUILabelLoad1Percent.text=[NSString stringWithFormat:@"给定负载 %@ %@",dr_value1 ,@"%"];
+                    if([@"1" isEqualToString:item[@"lo1_reverse"]]){
+                        [self.mUISwitch1 setOn:YES];
+                        isReverse1=YES;
+                    }
+                    else{
+                        [self.mUISwitch1 setOn:FALSE];
+                        isReverse1=FALSE;
+                    }
+                    
+                    //负载2
+                    NSString *dr_value2=item[@"lo2_value"];
+                    self.mUISlider2.value=[dr_value2  floatValue];
+                    load2=[dr_value2  floatValue];
+                    self.mUILabelLoad2Percent.text=[NSString stringWithFormat:@"给定负载 %@ %@",dr_value2 ,@"%"];
+                    if([@"1" isEqualToString:item[@"lo2_reverse"]]){
+                        [self.mUISwitch2 setOn:YES];
+                        isReverse2=YES;
+                    }
+                    else{
+                        [self.mUISwitch2 setOn:FALSE];
+                        isReverse2=FALSE;
+                    }
+
+                    
+                }
+                
             }
             else{
                 [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];

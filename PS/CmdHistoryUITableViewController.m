@@ -13,6 +13,7 @@
 #import "Alert.h"
 #import "Parameter.h"
 #import "CmdHistory.h"
+#import "DataBaseNSUserDefaults.h"
 @interface CmdHistoryUITableViewController ()
 
 @end
@@ -67,7 +68,7 @@
     
     // 请求参数
     NSDictionary *parameters = @{
-                                 @"username":@"lei"
+                                 @"username":[DataBaseNSUserDefaults getData:@"username"]
                                   };
     
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
