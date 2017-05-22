@@ -34,6 +34,8 @@
     [allDataFromServer addObject:@"6档"];
 
     [self getCurrentGear];
+    [self getCurrentIndicatorLight];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -41,7 +43,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//故障复位
+- (IBAction)errorRecover:(id)sender {
+    [self httpErrorRecover];
+}
 
 #pragma mark - Table view data source
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -194,6 +199,125 @@
     
     
 }
+
+
+
+//获取当前故障指示灯状态，选择还是未选择
+-(void) getCurrentIndicatorLight{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showFault.html?psid=1
+    NSString *urlString= [NSString stringWithFormat:@"%@/showFault.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    
+    NSDictionary *parameters = @{
+                                 @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                 };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                
+                
+                // [Alert showMessageAlert:@"设置成功" view:self];
+                
+                NSArray *array=[doc objectForKey:@"data"];
+                for(NSDictionary *item in array){
+                    NSLog(item[@"fault_state"]);
+                    if([@"1" isEqualToString:item[@"fault_state"]])
+                        self.mUIImageViewLight.image=[UIImage imageNamed:@"selected2.png"];
+                    else
+                        self.mUIImageViewLight.image=[UIImage imageNamed:@"un_selected.png"];
+
+                }
+                
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
+
+//故障复位
+-(void) httpErrorRecover{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showGear.html?psid=2
+    NSString *urlString= [NSString stringWithFormat:@"%@/submitFault.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+   // faultname=FaultIndication&username=ycx&
+    //faultstate=1&psid=1
+    NSDictionary *parameters = @{
+                                 @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"],
+                                 @"faultname":@"FaultIndication",
+                                 @"faultstate":@"1",
+                                 @"username":[DataBaseNSUserDefaults getData:@"username"]
+                                 };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+            
+                
+              [Alert showMessageAlert:@"故障复位成功" view:self];
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
 
 
 

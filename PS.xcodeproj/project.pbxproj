@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD169EB21ED17B32002FB25E /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = CD169EB11ED17B32002FB25E /* avatar.png */; };
+		CD169EB61ED2F09C002FB25E /* TemperatureControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD169EB51ED2F09C002FB25E /* TemperatureControlViewController.m */; };
 		CD3552731EC016D600B33545 /* IMG_0611.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CD3552721EC016D600B33545 /* IMG_0611.JPG */; };
 		CD3552781EC0185A00B33545 /* ParameterInImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */; };
 		CD35527B1EC01ECF00B33545 /* un_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3552791EC01ECF00B33545 /* un_selected.png */; };
@@ -105,6 +106,8 @@
 
 /* Begin PBXFileReference section */
 		CD169EB11ED17B32002FB25E /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		CD169EB41ED2F09C002FB25E /* TemperatureControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureControlViewController.h; sourceTree = "<group>"; };
+		CD169EB51ED2F09C002FB25E /* TemperatureControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureControlViewController.m; sourceTree = "<group>"; };
 		CD3552721EC016D600B33545 /* IMG_0611.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0611.JPG; sourceTree = "<group>"; };
 		CD3552761EC0185A00B33545 /* ParameterInImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterInImageViewController.h; sourceTree = "<group>"; };
 		CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterInImageViewController.m; sourceTree = "<group>"; };
@@ -272,6 +275,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD169EB31ED2F06B002FB25E /* temperatureControl */ = {
+			isa = PBXGroup;
+			children = (
+				CD169EB41ED2F09C002FB25E /* TemperatureControlViewController.h */,
+				CD169EB51ED2F09C002FB25E /* TemperatureControlViewController.m */,
+			);
+			name = temperatureControl;
+			sourceTree = "<group>";
+		};
 		CD3552741EC017EB00B33545 /* parameterInTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +330,7 @@
 		CD35529F1EC021DD00B33545 /* otherControll */ = {
 			isa = PBXGroup;
 			children = (
+				CD169EB31ED2F06B002FB25E /* temperatureControl */,
 				CD3552AC1EC1F08F00B33545 /* loadMotor */,
 				CD3552A81EC14E2700B33545 /* gearControll */,
 				CD3552A41EC0236B00B33545 /* motorController */,
@@ -880,6 +893,7 @@
 				CD35529C1EC021AB00B33545 /* WMProgressView.m in Sources */,
 				CDF2EFB81E5547AB00A499AE /* UIScrollView+MJExtension.m in Sources */,
 				CDF2F1601E5689C500A499AE /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				CD169EB61ED2F09C002FB25E /* TemperatureControlViewController.m in Sources */,
 				CDF2F1611E5689C500A499AE /* UIAlertView+AFNetworking.m in Sources */,
 				CDF2EFB41E5547AB00A499AE /* MJRefreshFooterView.m in Sources */,
 				CD3552AF1EC1F0C100B33545 /* LoadMotorViewController.m in Sources */,

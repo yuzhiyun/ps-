@@ -11,5 +11,6 @@
 @interface GearViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelCurrentGear;
+@property (weak, nonatomic) IBOutlet UIImageView *mUIImageViewLight;
 
 @end

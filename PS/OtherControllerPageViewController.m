@@ -11,6 +11,7 @@
 #import "MotorViewController.h"
 #import "GearViewController.h"
 #import "LoadMotorViewController.h"
+#import "TemperatureControlViewController.h"
 @interface OtherControllerPageViewController ()
 
 @end
@@ -90,14 +91,20 @@
     
     LoadMotorViewController *controller1 = (LoadMotorViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoadMotorViewController"];
     
-    GearViewController *controller2 = (GearViewController *)[storyboard instantiateViewControllerWithIdentifier:@"GearViewController"];
     
+    
+    TemperatureControlViewController *controller2 = (TemperatureControlViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TemperatureControlViewController"];
+    
+    GearViewController *controller3 = (GearViewController *)[storyboard instantiateViewControllerWithIdentifier:@"GearViewController"];
+
     if(index==0)
          return controller0;
     else if(index==1)
         return controller1;
-    else //if(index==2)
+    else if(index==2)
         return controller2;
+    else
+        return controller3;
 }
 
 - (void)didReceiveMemoryWarning {
