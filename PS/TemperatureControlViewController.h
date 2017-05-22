@@ -10,4 +10,12 @@
 
 @interface TemperatureControlViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelCurrentTemperature;
+@property (weak, nonatomic) IBOutlet UITextField *mUITextFieldTemperature;
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelPV;
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelSP;
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelKaidu;
+@property (weak, nonatomic) IBOutlet UITextField *mUITextFieldSP;
+
 @end

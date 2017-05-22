@@ -1072,6 +1072,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mUILabelCurrentTemperature" destination="4L2-PF-Zba" id="ghv-fi-NrB"/>
+                        <outlet property="mUILabelKaidu" destination="T5F-nV-VhD" id="sUg-Lq-61g"/>
+                        <outlet property="mUILabelPV" destination="dbs-re-ZYf" id="IfS-DF-Ner"/>
+                        <outlet property="mUILabelSP" destination="pai-Qy-De6" id="fcG-z5-cBO"/>
+                        <outlet property="mUITextFieldSP" destination="Uq1-ja-hY4" id="Icf-Mf-aIK"/>
+                        <outlet property="mUITextFieldTemperature" destination="LW1-0m-eXD" id="O95-Wm-xJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1K7-t2-ozv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

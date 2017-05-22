@@ -13,6 +13,7 @@
 #import "JsonUtil.h"
 #import "Alert.h"
 #import "Parameter.h"
+#import "DataBaseNSUserDefaults.h"
 #import "CmdHistory.h"
 @interface MethodControlViewController ()
 
@@ -94,9 +95,12 @@
     
     // 请求参数
     NSDictionary *parameters = @{
-                                 @"username":@"lei",
+                                
                                  @"comname":command,
-                                 @"psid":@"10"
+                                 @"comstate":@"0",
+                                 @"username":[DataBaseNSUserDefaults getData:@"username"],
+                                 @"gearname":command,
+                                 @"psid":[DataBaseNSUserDefaults getData:@"selectedPS"]
                                   };
     
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {

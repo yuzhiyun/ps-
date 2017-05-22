@@ -7,7 +7,11 @@
 //
 
 #import "TemperatureControlViewController.h"
-
+#import "AppDelegate.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "DataBaseNSUserDefaults.h"
+#import "JsonUtil.h"
+#import "Alert.h"
 @interface TemperatureControlViewController ()
 
 @end
@@ -24,14 +28,63 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//获取当前档位
+-(void) getCurrentGear{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showGearBoxOil.html?psid=10
+    NSString *urlString= [NSString stringWithFormat:@"%@/showGearBoxOil.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    
+    NSDictionary *parameters = @{
+                                 @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                 };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                
+                
+                // [Alert showMessageAlert:@"设置成功" view:self];
+                
+                NSArray *array=[doc objectForKey:@"data"];
+                for(NSDictionary *item in array){
+                    NSLog(item[@"p_value"]);
+                    self.mUILabelCurrentTemperature.text=item[@"p_value"];
+                }
+                
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
 }
-*/
+
 
 @end
