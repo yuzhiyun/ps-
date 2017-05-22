@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T6Q-u4-Z29" id="FC9-dg-COR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vi7-wB-9cS">
@@ -888,6 +888,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前档位： 未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKt-ff-3Kl">
+                                <rect key="frame" x="36" y="539.5" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -897,11 +903,16 @@
                             <constraint firstItem="pWX-sy-0h3" firstAttribute="leading" secondItem="p7f-d2-qXr" secondAttribute="leadingMargin" constant="20" id="JK7-N6-ioV"/>
                             <constraint firstItem="1nz-gk-M7g" firstAttribute="leading" secondItem="p7f-d2-qXr" secondAttribute="leading" id="W2s-ML-ibV"/>
                             <constraint firstItem="1nz-gk-M7g" firstAttribute="top" secondItem="QaT-Jc-fly" secondAttribute="bottom" id="ZNJ-Y7-QNk"/>
+                            <constraint firstItem="A4D-GW-g3j" firstAttribute="top" secondItem="fKt-ff-3Kl" secondAttribute="bottom" constant="30" id="dfW-np-tZt"/>
                             <constraint firstItem="rYK-mF-Epg" firstAttribute="top" secondItem="pWX-sy-0h3" secondAttribute="bottom" constant="50" id="lmt-a6-ZNK"/>
+                            <constraint firstItem="pWX-sy-0h3" firstAttribute="leading" secondItem="fKt-ff-3Kl" secondAttribute="leading" id="vX0-mt-pQb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SOP-FR-znx" secondAttribute="trailing" constant="30" id="y14-5c-ZS2"/>
                             <constraint firstItem="SOP-FR-znx" firstAttribute="centerY" secondItem="pWX-sy-0h3" secondAttribute="centerY" id="z56-kT-ZQw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mUILabelCurrentGear" destination="fKt-ff-3Kl" id="Ikh-31-D94"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMS-kS-J5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

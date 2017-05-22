@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "JsonUtil.h"
 #import "Alert.h"
+#import "DataBaseNSUserDefaults.h"
 @interface GearViewController ()
 
 @end
@@ -32,6 +33,7 @@
     [allDataFromServer addObject:@"5档"];
     [allDataFromServer addObject:@"6档"];
 
+    [self getCurrentGear];
     // Do any additional setup after loading the view.
 }
 
@@ -65,24 +67,27 @@
 }
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self submitCommand:[allDataFromServer objectAtIndex:indexPath.row]] ;
+    [self setGear:[allDataFromServer objectAtIndex:indexPath.row]] ;
                          
     
 }
-//获取参数
--(void) submitCommand:(NSString *)command{
+
+//设置档位
+-(void) setGear:(NSString *)command{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
-    ///ps.leideng.org/index.php/User/App/submitCMD.html?comname=Alarm&username=lei
-    NSString *urlString= [NSString stringWithFormat:@"%@/submitCMD.html",myDelegate.ipString];
+    //App/submitGear.html?gearname=1档&username=ycx&psid=2&gearstate=1
+
+    NSString *urlString= [NSString stringWithFormat:@"%@/submitGear.html",myDelegate.ipString];
     AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
     // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     
     // 请求参数
     NSDictionary *parameters = @{
-                                 @"username":@"lei",
-                                 @"comname":command,
-                                 @"psid":@"10"
+                                 @"username":[DataBaseNSUserDefaults getData:@"username"],
+                                 @"gearname":command,
+                                 @"psid":[DataBaseNSUserDefaults getData:@"selectedPS"],
+                                 @"gearstate":@"1"
                                  };
     
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -102,14 +107,74 @@
             {
                 
                 if([@"1" isEqualToString:[[doc objectForKey:@"data"]objectForKey:@"tag" ]])
+                {
                     
-                    [Alert showMessageAlert:@"执行命令成功" view:self];
+                    [Alert showMessageAlert:@"更换档位成功" view:self];
+                    self.mUILabelCurrentGear.text=[NSString stringWithFormat:@"当前档位：  %@",command];
+                }
                 else
-                    [Alert showMessageAlert:@"执行失败" view:self];
+                    [Alert showMessageAlert:@"更换档位失败" view:self];
                 
                 
                 
                 
+                
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
+//获取当前档位
+-(void) getCurrentGear{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showGear.html?psid=2
+    NSString *urlString= [NSString stringWithFormat:@"%@/showGear.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+
+    NSDictionary *parameters = @{
+                                 @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                 };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                
+                
+                // [Alert showMessageAlert:@"设置成功" view:self];
+                
+                NSArray *array=[doc objectForKey:@"data"];
+                for(NSDictionary *item in array){
+                    NSLog(item[@"gear_name"]);
+                    self.mUILabelCurrentGear.text=[NSString stringWithFormat:@"当前档位：  %@",item[@"gear_name"] ];
+                }
                 
             }
             else{
