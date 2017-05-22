@@ -19,6 +19,8 @@
 @implementation GearViewController{
      UITableView *mTableView;
     NSMutableArray *allDataFromServer;
+    //用于判断是否可以复位
+    Boolean isWrong;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +35,7 @@
     [allDataFromServer addObject:@"5档"];
     [allDataFromServer addObject:@"6档"];
 
+    isWrong=false;
     [self getCurrentGear];
     [self getCurrentIndicatorLight];
     
@@ -45,7 +48,10 @@
 }
 //故障复位
 - (IBAction)errorRecover:(id)sender {
-    [self httpErrorRecover];
+    if(isWrong)
+        [self httpErrorRecover];
+    else
+        [Alert showMessageAlert:@"当前无故障，无需复位" view:self];
 }
 
 #pragma mark - Table view data source
@@ -237,10 +243,15 @@
                 NSArray *array=[doc objectForKey:@"data"];
                 for(NSDictionary *item in array){
                     NSLog(item[@"fault_state"]);
-                    if([@"1" isEqualToString:item[@"fault_state"]])
+                    if([@"1" isEqualToString:item[@"fault_state"]]){
                         self.mUIImageViewLight.image=[UIImage imageNamed:@"selected2.png"];
-                    else
+                        isWrong=true;
+                    }
+                    else{
                         self.mUIImageViewLight.image=[UIImage imageNamed:@"un_selected.png"];
+                        isWrong=false;
+                    }
+                    
 
                 }
                 
@@ -278,7 +289,7 @@
     NSDictionary *parameters = @{
                                  @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"],
                                  @"faultname":@"FaultIndication",
-                                 @"faultstate":@"1",
+                                 @"faultstate":@"0",
                                  @"username":[DataBaseNSUserDefaults getData:@"username"]
                                  };
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -297,7 +308,7 @@
             if([@"0" isEqualToString:[doc objectForKey:@"code"]])
             {
             
-                
+            self.mUIImageViewLight.image=[UIImage imageNamed:@"un_selected.png"];
               [Alert showMessageAlert:@"故障复位成功" view:self];
             }
             else{

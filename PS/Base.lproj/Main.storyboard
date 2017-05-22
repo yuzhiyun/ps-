@@ -980,6 +980,9 @@
                                         <state key="normal" title="设置温度">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="setTemperature:" destination="cbn-9B-wdy" eventType="touchUpInside" id="TIp-S4-flP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
