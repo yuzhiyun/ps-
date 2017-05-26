@@ -146,7 +146,7 @@
     if(isReverse2)
         sReverse2=@"1";
     NSDictionary *parameters = @{
-                                 @"psid":@"10",
+                                 @"psid":[DataBaseNSUserDefaults getData:@"selectedPS"],
                                  @"username":@"admin",
                                  @"loname":driverModel,
                                  @"loslopetime":slopeTime,

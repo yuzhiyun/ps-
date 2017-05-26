@@ -68,7 +68,8 @@
                 
             }
             else{
-                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+               // [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+                [Alert showMessageAlert:@" 设置失败"view:self];
             }
         }
         else
@@ -77,6 +78,7 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        
         if(error.code==-1009)
             errorUser=@"主人，似乎没有网络喔！";
         [Alert showMessageAlert:errorUser view:self];

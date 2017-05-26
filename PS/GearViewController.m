@@ -149,6 +149,7 @@
     
 }
 
+
 //获取当前档位
 -(void) getCurrentGear{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];

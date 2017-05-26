@@ -119,7 +119,7 @@
     if(isReverse)
         sReverse=@"1";
     NSDictionary *parameters = @{
-                                 @"psid":@"10",
+                                 @"psid":[DataBaseNSUserDefaults getData:@"selectedPS"],
                                  @"drname":driverModel,
                                  @"drvalue":[NSString stringWithFormat:@"%d", load],
                                  @"drslopetime":slopeTime,
