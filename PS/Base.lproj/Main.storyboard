@@ -1068,6 +1068,9 @@
                                         <state key="normal" title="设置SP">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="setSP:" destination="cbn-9B-wdy" eventType="touchUpInside" id="g9t-e8-PyA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
