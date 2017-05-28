@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getCurrentTemperature];
+    [self getCurrentParameter];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,6 +126,57 @@
                     self.mUILabelCurrentTemperature.text=item[@"p_value"];
                 }
                 
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+    }];
+    
+    
+}
+
+
+//获取当前pv sp 开度
+-(void) getCurrentParameter{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    NSString *urlString= [NSString stringWithFormat:@"%@/showLiftBoxOil.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    NSDictionary *parameters = @{
+                                 @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                 };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                // [Alert showMessageAlert:@"设置成功" view:self];
+                NSDictionary *dic=[doc objectForKey:@"data"];
+                self.mUILabelPV.text=dic[@"YW"];
+                self.mUILabelSP.text=dic[@"SP"];
+                self.mUILabelKaidu.text=dic[@"KD"];
             }
             else{
                 [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
