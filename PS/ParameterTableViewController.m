@@ -14,6 +14,7 @@
 #import "Parameter.h"
 #import "ParameterInImageViewController.h"
 #import "DataBaseNSUserDefaults.h"
+#import "TestViewController.h"
 @interface ParameterTableViewController ()
 
 @end
@@ -117,7 +118,7 @@
 -(void)rightBarButtonItemPressed:(id)sender
 {
     
-    ParameterInImageViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"ParameterInImageViewController"];
+    TestViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"TestViewController"];
     nextPage.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:nextPage animated:YES];
     
