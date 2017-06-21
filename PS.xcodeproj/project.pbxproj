@@ -33,6 +33,12 @@
 		CD5274AA1EF7C72000AFFE67 /* selected2.png in Resources */ = {isa = PBXBuildFile; fileRef = CD52749D1EF7C72000AFFE67 /* selected2.png */; };
 		CD5274AB1EF7C72000AFFE67 /* un_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CD52749E1EF7C72000AFFE67 /* un_selected.png */; };
 		CD5274AD1EF7C7EC00AFFE67 /* system.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5274AC1EF7C7EC00AFFE67 /* system.png */; };
+		CD5274B51EFA1FDA00AFFE67 /* ARLineChartCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5274B01EFA1FDA00AFFE67 /* ARLineChartCommon.m */; };
+		CD5274B61EFA1FDA00AFFE67 /* ARLineChartContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5274B21EFA1FDA00AFFE67 /* ARLineChartContentView.m */; };
+		CD5274B71EFA1FDA00AFFE67 /* ARLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5274B41EFA1FDA00AFFE67 /* ARLineChartView.m */; };
+		CD5274BA1EFA241100AFFE67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5274B91EFA241100AFFE67 /* Foundation.framework */; };
+		CD5274BC1EFA241B00AFFE67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5274BB1EFA241B00AFFE67 /* CoreGraphics.framework */; };
+		CD5274BE1EFA242300AFFE67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5274BD1EFA242300AFFE67 /* UIKit.framework */; };
 		CD7D5EA41E4AB4BF0082CF37 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */; };
 		CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA91E4AB60E0082CF37 /* MainViewController.m */; };
 		CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5ED71E4ABBB50082CF37 /* MeViewController.m */; };
@@ -144,6 +150,15 @@
 		CD52749D1EF7C72000AFFE67 /* selected2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected2.png; sourceTree = "<group>"; };
 		CD52749E1EF7C72000AFFE67 /* un_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = un_selected.png; sourceTree = "<group>"; };
 		CD5274AC1EF7C7EC00AFFE67 /* system.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system.png; sourceTree = "<group>"; };
+		CD5274AF1EFA1FDA00AFFE67 /* ARLineChartCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLineChartCommon.h; sourceTree = "<group>"; };
+		CD5274B01EFA1FDA00AFFE67 /* ARLineChartCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLineChartCommon.m; sourceTree = "<group>"; };
+		CD5274B11EFA1FDA00AFFE67 /* ARLineChartContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLineChartContentView.h; sourceTree = "<group>"; };
+		CD5274B21EFA1FDA00AFFE67 /* ARLineChartContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLineChartContentView.m; sourceTree = "<group>"; };
+		CD5274B31EFA1FDA00AFFE67 /* ARLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLineChartView.h; sourceTree = "<group>"; };
+		CD5274B41EFA1FDA00AFFE67 /* ARLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLineChartView.m; sourceTree = "<group>"; };
+		CD5274B91EFA241100AFFE67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CD5274BB1EFA241B00AFFE67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CD5274BD1EFA242300AFFE67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CD7D5EA21E4AB4BF0082CF37 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CD7D5EA81E4AB60E0082CF37 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -258,6 +273,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5274BE1EFA242300AFFE67 /* UIKit.framework in Frameworks */,
+				CD5274BC1EFA241B00AFFE67 /* CoreGraphics.framework in Frameworks */,
+				CD5274BA1EFA241100AFFE67 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +435,29 @@
 			path = bottom;
 			sourceTree = "<group>";
 		};
+		CD5274AE1EFA1FDA00AFFE67 /* ARLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				CD5274AF1EFA1FDA00AFFE67 /* ARLineChartCommon.h */,
+				CD5274B01EFA1FDA00AFFE67 /* ARLineChartCommon.m */,
+				CD5274B11EFA1FDA00AFFE67 /* ARLineChartContentView.h */,
+				CD5274B21EFA1FDA00AFFE67 /* ARLineChartContentView.m */,
+				CD5274B31EFA1FDA00AFFE67 /* ARLineChartView.h */,
+				CD5274B41EFA1FDA00AFFE67 /* ARLineChartView.m */,
+			);
+			path = ARLineChart;
+			sourceTree = "<group>";
+		};
+		CD5274B81EFA241000AFFE67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD5274BD1EFA242300AFFE67 /* UIKit.framework */,
+				CD5274BB1EFA241B00AFFE67 /* CoreGraphics.framework */,
+				CD5274B91EFA241100AFFE67 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CD7D5E9D1E4AB27A0082CF37 /* mainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +525,7 @@
 		CD7FFDA91E3E3894003DE455 = {
 			isa = PBXGroup;
 			children = (
+				CD5274AE1EFA1FDA00AFFE67 /* ARLineChart */,
 				CD35528E1EC021AB00B33545 /* WMPageController */,
 				CDF2F12F1E5689C500A499AE /* AFNetworking */,
 				CDF2EFC91E5547CB00A499AE /* utility */,
@@ -492,6 +534,7 @@
 				CD7FFDCE1E3E3894003DE455 /* PSTests */,
 				CD7FFDD91E3E3894003DE455 /* PSUITests */,
 				CD7FFDB31E3E3894003DE455 /* Products */,
+				CD5274B81EFA241000AFFE67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -898,6 +941,7 @@
 			files = (
 				CDF2EFD61E555EB800A499AE /* CmdHistoryUITableViewController.m in Sources */,
 				CD7FFDBD1E3E3894003DE455 /* ViewController.m in Sources */,
+				CD5274B61EFA1FDA00AFFE67 /* ARLineChartContentView.m in Sources */,
 				CDF2F1621E5689C500A499AE /* UIButton+AFNetworking.m in Sources */,
 				CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */,
 				CD3552781EC0185A00B33545 /* ParameterInImageViewController.m in Sources */,
@@ -916,6 +960,7 @@
 				CDF2EFCA1E5547CB00A499AE /* Alert.m in Sources */,
 				CDF2EFB21E5547AB00A499AE /* MJRefreshBaseView.m in Sources */,
 				CD7D5EDC1E4ABFBA0082CF37 /* TendencyChartViewController.m in Sources */,
+				CD5274B71EFA1FDA00AFFE67 /* ARLineChartView.m in Sources */,
 				CDF2F1661E5689C500A499AE /* UIWebView+AFNetworking.m in Sources */,
 				CDF2F1561E5689C500A499AE /* AFHTTPRequestOperation.m in Sources */,
 				CD52748B1EF75C8900AFFE67 /* TestViewController.m in Sources */,
@@ -952,6 +997,7 @@
 				CD35529D1EC021AB00B33545 /* WMScrollView.m in Sources */,
 				CDF2F1591E5689C500A499AE /* AFNetworkReachabilityManager.m in Sources */,
 				CD35529B1EC021AB00B33545 /* WMMenuView.m in Sources */,
+				CD5274B51EFA1FDA00AFFE67 /* ARLineChartCommon.m in Sources */,
 				CD7FFDB71E3E3894003DE455 /* main.m in Sources */,
 				CD35529A1EC021AB00B33545 /* WMMenuItem.m in Sources */,
 			);

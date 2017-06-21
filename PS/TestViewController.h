@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *mUILablePower2;
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelTwist2;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelDriverRotationRate;
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelDriverPower;
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelDriverTwist;

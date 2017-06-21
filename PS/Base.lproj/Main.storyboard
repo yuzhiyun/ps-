@@ -285,37 +285,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转速(rpm):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61f-p3-Pnz">
-                                <rect key="frame" x="168.5" y="140" width="81.5" height="21"/>
+                                <rect key="frame" x="168.5" y="120" width="81.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV6-cp-4JI">
-                                <rect key="frame" x="260" y="140" width="35" height="21"/>
+                                <rect key="frame" x="260" y="120" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.23652616209999999" blue="0.1614098991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="功率(k W):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-V3-dv3">
-                                <rect key="frame" x="168.5" y="166" width="80" height="21"/>
+                                <rect key="frame" x="168.5" y="146" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW7-gj-BBs">
-                                <rect key="frame" x="260" y="166" width="35" height="21"/>
+                                <rect key="frame" x="260" y="146" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.23652616209999999" blue="0.1614098991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扭矩(N.m):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQA-8p-fVS">
-                                <rect key="frame" x="168.5" y="187" width="82" height="21"/>
+                                <rect key="frame" x="168.5" y="167" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-Vj-Mlh">
-                                <rect key="frame" x="260" y="187" width="35" height="21"/>
+                                <rect key="frame" x="260" y="167" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.23652616209999999" blue="0.1614098991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -377,7 +377,7 @@
                             <constraint firstItem="J6K-rP-aXA" firstAttribute="leading" secondItem="PXh-f1-H2Z" secondAttribute="trailing" constant="20" id="dI4-qq-xKv"/>
                             <constraint firstItem="pvK-x9-Jpo" firstAttribute="height" secondItem="1DZ-5E-OkZ" secondAttribute="height" multiplier="0.43" id="ema-Gf-r7x"/>
                             <constraint firstItem="xQA-8p-fVS" firstAttribute="top" secondItem="OOT-V3-dv3" secondAttribute="bottom" id="er7-sW-Wre"/>
-                            <constraint firstItem="cV6-cp-4JI" firstAttribute="top" secondItem="aTE-H6-xi3" secondAttribute="bottom" constant="120" id="fPI-TO-Kgt"/>
+                            <constraint firstItem="cV6-cp-4JI" firstAttribute="top" secondItem="aTE-H6-xi3" secondAttribute="bottom" constant="100" id="fPI-TO-Kgt"/>
                             <constraint firstItem="0aR-no-cPx" firstAttribute="leading" secondItem="4zY-ik-CpM" secondAttribute="leading" id="fs2-cp-KP1"/>
                             <constraint firstItem="uKy-ng-BqG" firstAttribute="leading" secondItem="jEo-IH-Xh7" secondAttribute="leading" id="hqs-g8-czi"/>
                             <constraint firstItem="SRQ-nf-b8J" firstAttribute="top" secondItem="J6K-rP-aXA" secondAttribute="bottom" id="ioN-Nu-fLM"/>
@@ -395,7 +395,7 @@
                     </view>
                     <connections>
                         <outlet property="mUILabelDriverPower" destination="OW7-gj-BBs" id="bkT-B7-cNQ"/>
-                        <outlet property="mUILabelDriverRotationRate" destination="cV6-cp-4JI" id="QnH-Hl-hs6"/>
+                        <outlet property="mUILabelDriverRotationRate" destination="cV6-cp-4JI" id="hdh-B0-vsK"/>
                         <outlet property="mUILabelDriverTwist" destination="e0H-Vj-Mlh" id="Fn5-Ac-jjg"/>
                         <outlet property="mUILabelGear" destination="CH9-e0-mcQ" id="Ve7-NY-MYo"/>
                         <outlet property="mUILabelRotationRate1" destination="24E-Os-xbR" id="Yo7-pm-T6c"/>

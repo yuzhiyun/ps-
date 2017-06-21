@@ -77,7 +77,7 @@
                     }
                     
                     //把用到的字符串参数放到一个数组里
-                    NSArray *keys = [NSArray arrayWithObjects:@"负载1功率",@"负载1扭矩",@"负载1转速",@"负载2功率",@"负载2扭矩",@"负载2转速"@"驱动电机功率",@"驱动电机扭矩",@"驱动电机转速",@"档位",@"升速箱开度",nil];
+                    NSArray *keys = [NSArray arrayWithObjects:@"负载1功率",@"负载1扭矩",@"负载1转速",@"负载2功率",@"负载2扭矩",@"负载2转速",@"驱动电机功率",@"驱动电机扭矩",@"驱动电机转速",@"档位",@"升速箱开度",nil];
                     
                     //比如我们要把@"stormer"作为switch的参数，则取到它在数组中的下标，然后在switch中根据下标来进行处理。
                     int index = [keys  indexOfObject:model.p_name];
@@ -132,12 +132,12 @@
                 //[mUITableView reloadData];
                 
                 //模拟1秒后（
-                /*
+                
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self loadData];
                 });
                 
-                */
+                
                 
                 
                 
@@ -155,6 +155,12 @@
         if(error.code==-1009)
             errorUser=@"主人，似乎没有网络喔！";
         [Alert showMessageAlert:errorUser view:self];
+        //模拟1秒后（
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self loadData];
+        });
+
     }];
     
     
