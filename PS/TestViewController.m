@@ -166,6 +166,24 @@
     
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationLandscapeRight;
+}
+
+- (IBAction)btnBack:(id)sender {
+    
+    [self dismissViewControllerAnimated: YES completion: nil];
+}
+
 
 
 @end

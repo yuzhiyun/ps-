@@ -117,11 +117,10 @@
  */
 -(void)rightBarButtonItemPressed:(id)sender
 {
-    
     TestViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"TestViewController"];
-    nextPage.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:nextPage animated:YES];
-    
+    [self presentViewController:nextPage animated:YES completion:^{
+        NSLog(@"第二个页面跳转成功！");
+    }];
     
 }
 - (void)didReceiveMemoryWarning {
