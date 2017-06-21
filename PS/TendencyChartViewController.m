@@ -18,6 +18,8 @@
 #import "Parameter.h"
 #import "ParameterInImageViewController.h"
 #import "DataBaseNSUserDefaults.h"
+
+#define ARC4RANDOM_MAX      0x100000000
 @interface TendencyChartViewController ()
 
 @property (strong, nonatomic) ARLineChartView *lineChartView;
@@ -25,7 +27,7 @@
 
 @implementation TendencyChartViewController{
     NSMutableArray *dataSource;
-    int i;
+    int index;
     CGRect rect;
     Boolean isChartAddedToSuperView;
 }
@@ -33,7 +35,7 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
-    i=0;
+    index=0;
     isChartAddedToSuperView=false;
     self.title=@"变化趋势";
     dataSource = [NSMutableArray array];
@@ -97,32 +99,49 @@
             {
                 
                 //[self.lineChartView removeFromSuperview];
-                RLLineChartItem *item = [[RLLineChartItem alloc] init];
-                double randVal;
-                
-                //randVal = rand() /((double)(RAND_MAX)/distanceMax) + distanceMin;
-                item.xValue = i;
-                
-                
-                item.y1Value = i*2;
-                
-                
-                item.y2Value = i*3+50;
-                
-                
-                [dataSource addObject:item];
                 
                 if(!isChartAddedToSuperView){
+
+                    for(int i=0;i<101;i++){
+                        RLLineChartItem *item = [[RLLineChartItem alloc] init];
+                        item.xValue = i;
+                        //item.y1Value = nil;
+                        //item.y2Value = nil;
+                        [dataSource addObject:item];
+                    }
                     self.lineChartView = [[ARLineChartView alloc] initWithFrame:rect dataSource:dataSource xTitle:@"Kilometre" y1Title:@"Altitude (meters)" y2Title:@"Speed (km/h)" desc1:@"Altitude" desc2:@"Speed"];
                     [self.view addSubview:self.lineChartView];
                     isChartAddedToSuperView=true;
                 }else{
+                    
+                    if(index>100){
+                        index=0;
+                        [dataSource removeAllObjects];
+                        for(int i=0;i<101;i++){
+                            RLLineChartItem *item = [[RLLineChartItem alloc] init];
+                            item.xValue = i;
+                            //item.y1Value = nil;
+                            //item.y2Value = nil;
+                            [dataSource addObject:item];
+                        }
+                    }
+                    double val1 = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 100.0f);
+                    double val2 = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 10.0f);
+                    for(int i=index;i<101;i++){
+                        
+                        RLLineChartItem *item=[dataSource objectAtIndex:i];
+                        item.y1Value=2*val1;
+                        //取0-100中间的浮点数;
+                        item.y2Value=val2;
+                    }
                     [self.lineChartView refreshData:dataSource];
+                    
+                    index++;
                 }
                 //模拟1秒后（
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self loadData];
-                    i++;
+                    //index++;
                 });
             }
             else{

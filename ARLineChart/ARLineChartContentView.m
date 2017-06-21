@@ -151,7 +151,7 @@ static bool isLineIntersectRectangle(CGFloat linePointX1,
         xMin = item.xValue; xMax = item.xValue;
         y1Min = item.y1Value; y1Max = item.y1Value;
         y2Min = item.y2Value; y2Max = item.y2Value;
-        
+        //找出各坐标的最大值、最小值
         for (NSInteger i = 1; i < self.dataSource.count; i++) {
             RLLineChartItem *item = [self.dataSource objectAtIndex:i];
             if (item.xValue < xMin)
@@ -175,12 +175,21 @@ static bool isLineIntersectRectangle(CGFloat linePointX1,
             self.xArray = [NSMutableArray array];
         else
             [self.xArray removeAllObjects];
+        
         float xPer = (xMax ) / xStepCount ;
         self.xPerValue = xPer;
         for (int i=0; i<xStepCount; i++) {
             [self.xArray addObject:[NSNumber numberWithFloat: (xPer + i * xPer)]];
         }
         
+        /**
+         * 俞志云
+         * 以下一段for循环代码是我自己更改的
+                 for(int i=0;i<101;i++){
+            [self.xArray addObject:[NSNumber numberWithFloat: i]];
+        }
+         */
+
         //左y轴：海拔
         if (!self.y1Array)
             self.y1Array = [NSMutableArray array];

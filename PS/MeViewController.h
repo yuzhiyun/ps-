@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelCurrentUser;
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelSelectedPsId;
 
 @end

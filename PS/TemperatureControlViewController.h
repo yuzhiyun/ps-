@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelSP;
 @property (weak, nonatomic) IBOutlet UILabel *mUILabelKaidu;
 @property (weak, nonatomic) IBOutlet UITextField *mUITextFieldSP;
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelDestinationTemp;
 
 @end

@@ -1,7 +1,6 @@
 //
 //  TemperatureControlViewController.m
 //  PS
-//
 //  Created by 秦启飞 on 2017/5/22.
 //  Copyright © 2017年 yuzhiyun. All rights reserved.
 //
@@ -12,6 +11,7 @@
 #import "DataBaseNSUserDefaults.h"
 #import "JsonUtil.h"
 #import "Alert.h"
+
 @interface TemperatureControlViewController ()
 
 @end
@@ -39,8 +39,6 @@
         [Alert showMessageAlert:@"SP不能为空" view:self];
     else
         [self setSP];
-    
-    
 }
 -(void) setSP{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
@@ -90,12 +88,6 @@
             errorUser=@"主人，似乎没有网络喔！";
         [Alert showMessageAlert:errorUser view:self];
     }];
-    
-
-    
-    
-    
-    
 }
 
 
@@ -130,7 +122,7 @@
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]])
             {
-                self.mUILabelCurrentTemperature.text=self.mUITextFieldTemperature.text;
+                self.mUILabelDestinationTemp.text=self.mUITextFieldTemperature.text;
                 [Alert showMessageAlert:@"设置变速箱油温成功" view:self];
                 
             }
@@ -182,16 +174,13 @@
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]])
             {
-                
-                
                 // [Alert showMessageAlert:@"设置成功" view:self];
                 
-                NSArray *array=[doc objectForKey:@"data"];
-                for(NSDictionary *item in array){
-                    NSLog(item[@"p_value"]);
-                    self.mUILabelCurrentTemperature.text=item[@"p_value"];
-                }
+                NSDictionary *data=[doc objectForKey:@"data"];
+                self.mUILabelCurrentTemperature.text=data[@"nowtemp"];
+                self.mUILabelDestinationTemp.text=data[@"settemp"];
                 
+                //nowtemp":"55","settemp":"100
             }
             else{
                 [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
@@ -258,9 +247,5 @@
             errorUser=@"主人，似乎没有网络喔！";
         [Alert showMessageAlert:errorUser view:self];
     }];
-    
-    
 }
-
-
 @end
