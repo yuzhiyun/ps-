@@ -24,6 +24,7 @@
     
     
     myDelegate.ipString=@"http://ps.leideng.org/index.php/User/App";
+    allParamatersArray=[[NSMutableArray alloc]init];;
     return YES;
 }
 

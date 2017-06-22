@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ChoosePsParameterViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelParameter1;
+@property (weak, nonatomic) IBOutlet UILabel *mUILabelParameter2;
+
+
 
 @end

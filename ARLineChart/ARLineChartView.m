@@ -107,30 +107,6 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-//    ////////////////////////// 画标题 //////////////////////////
-//    UIColor *textColor = line1Color;
-//    UIFont *font = [UIFont systemFontOfSize:14];
-//    CGFloat y = MARGIN_TOP;
-//
-//    //画标题1
-//    [textColor set];
-//    CGSize title1Size = [self.title1 sizeWithFont:font];
-//    CGRect titleRect1 = CGRectMake((self.frame.size.width - title1Size.width) / 2,
-//                             y,
-//                             title1Size.width,
-//                             title1Size.height);
-//    [self.title1 drawInRect:titleRect1 withFont:font lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
-//
-//    //画标题2
-//    textColor = line2Color;
-//    [textColor set];
-//    y = titleRect1.origin.y + titleRect1.size.height + 2;
-//    CGSize title2Size = [self.title2 sizeWithFont:font];
-//    CGRect titleRect2 = CGRectMake((self.frame.size.width - title2Size.width) / 2,
-//                              y,
-//                              title2Size.width,
-//                              title2Size.height);
-//    [self.title2 drawInRect:titleRect2 withFont:font lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
 
     
     ////////////////////// 画底部线条颜色说明文字 //////////////////////////

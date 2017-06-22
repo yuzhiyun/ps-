@@ -161,7 +161,7 @@
 //获取参数
 -(void) loadData{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
-    //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=1
+    //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=10
     NSString *urlString= [NSString stringWithFormat:@"%@/showParameter.html",myDelegate.ipString];
     AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
@@ -189,12 +189,16 @@
                 NSArray *array=[doc objectForKey:@"data"];
                 for(NSDictionary *item in array){
                     Parameter *model=[[Parameter alloc]init];
+                    model.p_id=item[@"p_id"];
                     model.p_name=item [@"p_name"];
                     model.p_value=item[@"p_value"];
                     model.p_unit=item[@"p_unit"];
                     [mAllDataFromServer addObject:model
                      ];
                 }
+                //保存以便在显示参数曲线的时候用于选择参数
+                AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+                myDelegate.allParamatersArray =mAllDataFromServer;
                 [mUITableView reloadData];
                 
                 //模拟1秒后（

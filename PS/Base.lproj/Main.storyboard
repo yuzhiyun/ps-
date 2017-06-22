@@ -647,14 +647,60 @@
                                     <action selector="back:" destination="sL7-f5-YXo" eventType="touchUpInside" id="PM0-RX-Mwf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参数一" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B86-Z2-AVn">
+                                <rect key="frame" x="145.5" y="9.5" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vv-kZ-PKU">
+                                <rect key="frame" x="207.5" y="9.5" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参数二" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRI-sL-JEJ">
+                                <rect key="frame" x="282.5" y="9" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE6-fk-h3w">
+                                <rect key="frame" x="344.5" y="9.5" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前值：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fip-Lz-jV1">
+                                <rect key="frame" x="56" y="9.5" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pE6-fk-h3w" firstAttribute="leading" secondItem="KRI-sL-JEJ" secondAttribute="trailing" constant="10" id="1Rb-gD-tu5"/>
                             <constraint firstItem="WN1-Lc-WIK" firstAttribute="leading" secondItem="QZ0-dq-vVC" secondAttribute="leading" constant="5" id="7fh-Tc-r6D"/>
+                            <constraint firstItem="KRI-sL-JEJ" firstAttribute="leading" secondItem="2vv-kZ-PKU" secondAttribute="trailing" constant="40" id="a2n-0p-Pmn"/>
+                            <constraint firstItem="pE6-fk-h3w" firstAttribute="centerY" secondItem="WN1-Lc-WIK" secondAttribute="centerY" id="eTh-Xf-JbY"/>
+                            <constraint firstItem="2vv-kZ-PKU" firstAttribute="leading" secondItem="B86-Z2-AVn" secondAttribute="trailing" constant="10" id="fkE-t0-h8S"/>
+                            <constraint firstItem="fip-Lz-jV1" firstAttribute="centerY" secondItem="WN1-Lc-WIK" secondAttribute="centerY" id="g2j-cd-vEo"/>
+                            <constraint firstItem="B86-Z2-AVn" firstAttribute="leading" secondItem="fip-Lz-jV1" secondAttribute="trailing" constant="20" id="gy0-Ud-49m"/>
+                            <constraint firstItem="B86-Z2-AVn" firstAttribute="centerY" secondItem="WN1-Lc-WIK" secondAttribute="centerY" id="jV4-mf-tfx"/>
+                            <constraint firstItem="2vv-kZ-PKU" firstAttribute="centerY" secondItem="WN1-Lc-WIK" secondAttribute="centerY" id="rzY-TN-Rui"/>
                             <constraint firstItem="WN1-Lc-WIK" firstAttribute="top" secondItem="QZ0-dq-vVC" secondAttribute="top" constant="5" id="tdh-6c-wUe"/>
+                            <constraint firstItem="fip-Lz-jV1" firstAttribute="leading" secondItem="WN1-Lc-WIK" secondAttribute="trailing" constant="10" id="vjh-9i-MYT"/>
+                            <constraint firstItem="KRI-sL-JEJ" firstAttribute="centerY" secondItem="WN1-Lc-WIK" secondAttribute="centerY" id="xzJ-5M-mnU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KT7-GI-XaA"/>
+                    <connections>
+                        <outlet property="mUILabelP1Key" destination="B86-Z2-AVn" id="X25-yc-4g1"/>
+                        <outlet property="mUILabelP1Value" destination="2vv-kZ-PKU" id="OqO-Rt-wdr"/>
+                        <outlet property="mUILabelP2Key" destination="KRI-sL-JEJ" id="OJc-gL-up5"/>
+                        <outlet property="mUILabelP2Value" destination="pE6-fk-h3w" id="iAf-Ad-WAJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oA-Jp-VCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -673,17 +719,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlz-3v-6Mj">
-                                <rect key="frame" x="164" y="293" width="94" height="30"/>
+                                <rect key="frame" x="75" y="451" width="206" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="跳转"/>
+                                <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="确认">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="enter:" destination="uP0-An-CxD" eventType="touchUpInside" id="zEO-fi-0a8"/>
+                                    <action selector="ok:" destination="uP0-An-CxD" eventType="touchUpInside" id="ovZ-Dm-bMY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参数一：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zx0-Ny-sv5">
+                                <rect key="frame" x="66" y="149" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参数二：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ5-eK-YoZ">
+                                <rect key="frame" x="66" y="225" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="空" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnD-a7-PfK">
+                                <rect key="frame" x="157" y="149" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="空" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-xf-HKD">
+                                <rect key="frame" x="157" y="225" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-1V-lrf">
+                                <rect key="frame" x="289" y="145" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="更换参数">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeParameter1:" destination="uP0-An-CxD" eventType="touchUpInside" id="C5r-9l-hO6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-Cy-pXb">
+                                <rect key="frame" x="289" y="216" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19807185059999999" green="0.66129513610000001" blue="0.98470920319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="更换参数">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeParameter2:" destination="uP0-An-CxD" eventType="touchUpInside" id="erz-qk-EwI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cmh-jM-7zN"/>
+                    <connections>
+                        <outlet property="mUILabelParameter1" destination="GnD-a7-PfK" id="9Yc-JW-Uo8"/>
+                        <outlet property="mUILabelParameter2" destination="MgV-xf-HKD" id="x5e-iv-y97"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlk-aW-SjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,20 +30,22 @@
     int index;
     CGRect rect;
     Boolean isChartAddedToSuperView;
+    AppDelegate *myDelegate;
 }
 
 - (void)viewDidLoad {
 
+  
     [super viewDidLoad];
     index=0;
     isChartAddedToSuperView=false;
     self.title=@"变化趋势";
     dataSource = [NSMutableArray array];
-    rect = CGRectMake(50, 100,
-                      self.view.frame.size.width - 5 - 5,
-                      self.view.frame.size.height - 30-20-self.tabBarController.tabBar.frame.size.height);
+    rect = CGRectMake(5, 30,self.view.frame.size.height - 20-20,
+                      self.view.frame.size.width - 5 - 5-10-5
+                      );
     
-    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    myDelegate = [[UIApplication sharedApplication]delegate];
     [self.navigationController.navigationBar setBarTintColor:myDelegate.navigationBarColor];
     //      navigationBar标题颜色
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,nil]];
@@ -53,6 +55,35 @@
     //    修改下一个界面返回按钮的title，注意这行代码每个页面都要写一遍，不是全局的
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     
+    //获取到两个纵坐标的名称以及单位
+    NSString *parameter1;
+    NSString *parameter2;
+    NSString *unit1;
+    NSString *unit2;
+    for(Parameter *model in myDelegate.allParamatersArray){
+        if([model.p_id isEqualToString:p_id1]){
+            parameter1=model.p_name;
+            unit1=model.p_unit;
+        }
+        else if([model.p_id isEqualToString:p_id2]){
+            parameter2=model.p_name;
+            unit2=model.p_unit;
+        }
+    }
+    
+    //首先填充101个数据到表格中，使得图表的横坐标能够显示0——100的范围
+    for(int i=0;i<101;i++){
+        RLLineChartItem *item = [[RLLineChartItem alloc] init];
+        item.xValue = i;
+        //item.y1Value = nil;
+        //item.y2Value = nil;
+        [dataSource addObject:item];
+    }
+    self.lineChartView = [[ARLineChartView alloc] initWithFrame:rect dataSource:dataSource xTitle:@"" y1Title: @"" y2Title:@"" desc1:@"" desc2:@""];
+    [self.view addSubview:self.lineChartView];
+    //显示参数名称
+    self.mUILabelP1Key.text=[NSString stringWithFormat:@"%@ ( %@ ) :" ,parameter1,unit1];
+    self.mUILabelP2Key.text=[NSString stringWithFormat:@"%@ ( %@ ) :" ,parameter2,unit2];
     [self loadData];
     
 }
@@ -100,6 +131,8 @@
                 
                 //[self.lineChartView removeFromSuperview];
                 
+                //首先填充
+                /*
                 if(!isChartAddedToSuperView){
 
                     for(int i=0;i<101;i++){
@@ -113,7 +146,7 @@
                     [self.view addSubview:self.lineChartView];
                     isChartAddedToSuperView=true;
                 }else{
-                    
+                    */
                     if(index>100){
                         index=0;
                         [dataSource removeAllObjects];
@@ -125,19 +158,32 @@
                             [dataSource addObject:item];
                         }
                     }
-                    double val1 = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 100.0f);
-                    double val2 = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 10.0f);
+                    //double val1 = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 100.0f);
+                   // double val2 = floorf(((double)arc4random() / ARC4RANDOM_MAX) * 10.0f);
                     for(int i=index;i<101;i++){
                         
-                        RLLineChartItem *item=[dataSource objectAtIndex:i];
-                        item.y1Value=2*val1;
-                        //取0-100中间的浮点数;
-                        item.y2Value=val2;
+                        RLLineChartItem *lineItem=[dataSource objectAtIndex:i];
+                        NSArray *array=[doc objectForKey:@"data"];
+                        for(NSDictionary *item in array){
+                            
+                            if([p_id1 isEqualToString:item[@"p_id"]]){
+                                double value=[item[@"p_value"] doubleValue];
+                                
+                                self.mUILabelP1Value.text=item[@"p_value"] ;
+                                lineItem.y1Value=value;
+                            }else if([p_id2 isEqualToString:item[@"p_id"]]){
+                                double value=[item[@"p_value"] doubleValue];
+                                self.mUILabelP2Value.text=item[@"p_value"] ;
+                                lineItem.y2Value=value;
+                            }
+                            
+                        }
+                        
                     }
                     [self.lineChartView refreshData:dataSource];
                     
                     index++;
-                }
+                //}
                 //模拟1秒后（
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self loadData];

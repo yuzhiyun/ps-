@@ -13,11 +13,13 @@
     
     UIColor *navigationBarColor;
      NSString *ipString;
+    NSMutableArray *allParamatersArray;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,strong)UIColor *navigationBarColor;
 
 @property (nonatomic,strong)NSString *ipString;
+@property (nonatomic,strong)NSMutableArray *allParamatersArray;
 @end
 
