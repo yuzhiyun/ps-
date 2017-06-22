@@ -12,7 +12,7 @@
 #import "JsonUtil.h"
 #import "Alert.h"
 #import "Parameter.h"
-#import "ParameterInImageViewController.h"
+//#import "ParameterInImageViewController.h"
 #import "DataBaseNSUserDefaults.h"
 #import "TestViewController.h"
 @interface ParameterTableViewController ()

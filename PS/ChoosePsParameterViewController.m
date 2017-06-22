@@ -1,22 +1,31 @@
 //
-//  ParameterInImageViewController.m
+//  ChoosePsParameterViewController.m
 //  PS
 //
-//  Created by 秦启飞 on 2017/5/8.
+//  Created by 秦启飞 on 2017/6/22.
 //  Copyright © 2017年 yuzhiyun. All rights reserved.
 //
 
-#import "ParameterInImageViewController.h"
-
-@interface ParameterInImageViewController ()
+#import "ChoosePsParameterViewController.h"
+#import "TendencyChartViewController.h"
+@interface ChoosePsParameterViewController ()
 
 @end
 
-@implementation ParameterInImageViewController
+@implementation ChoosePsParameterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)enter:(id)sender {
+    TendencyChartViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"TendencyChartViewController"];
+    [self presentViewController:nextPage animated:YES completion:^{
+        NSLog(@"第二个页面跳转成功！");
+    }];
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,18 +42,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (BOOL)shouldAutorotate
-{
-    return NO;
-}
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscape;
-}
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return UIInterfaceOrientationLandscapeRight;
-}
 
 @end

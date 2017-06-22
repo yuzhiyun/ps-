@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CD169EB61ED2F09C002FB25E /* TemperatureControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD169EB51ED2F09C002FB25E /* TemperatureControlViewController.m */; };
-		CD3552781EC0185A00B33545 /* ParameterInImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */; };
 		CD35529A1EC021AB00B33545 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552911EC021AB00B33545 /* WMMenuItem.m */; };
 		CD35529B1EC021AB00B33545 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552931EC021AB00B33545 /* WMMenuView.m */; };
 		CD35529C1EC021AB00B33545 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552951EC021AB00B33545 /* WMProgressView.m */; };
@@ -39,6 +38,7 @@
 		CD5274BA1EFA241100AFFE67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5274B91EFA241100AFFE67 /* Foundation.framework */; };
 		CD5274BC1EFA241B00AFFE67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5274BB1EFA241B00AFFE67 /* CoreGraphics.framework */; };
 		CD5274BE1EFA242300AFFE67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5274BD1EFA242300AFFE67 /* UIKit.framework */; };
+		CD74C7D61EFB55B700C6195F /* ChoosePsParameterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74C7D51EFB55B700C6195F /* ChoosePsParameterViewController.m */; };
 		CD7D5EA41E4AB4BF0082CF37 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */; };
 		CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA91E4AB60E0082CF37 /* MainViewController.m */; };
 		CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5ED71E4ABBB50082CF37 /* MeViewController.m */; };
@@ -114,8 +114,6 @@
 /* Begin PBXFileReference section */
 		CD169EB41ED2F09C002FB25E /* TemperatureControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureControlViewController.h; sourceTree = "<group>"; };
 		CD169EB51ED2F09C002FB25E /* TemperatureControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureControlViewController.m; sourceTree = "<group>"; };
-		CD3552761EC0185A00B33545 /* ParameterInImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterInImageViewController.h; sourceTree = "<group>"; };
-		CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterInImageViewController.m; sourceTree = "<group>"; };
 		CD3552901EC021AB00B33545 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
 		CD3552911EC021AB00B33545 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
 		CD3552921EC021AB00B33545 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
@@ -159,6 +157,8 @@
 		CD5274B91EFA241100AFFE67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CD5274BB1EFA241B00AFFE67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CD5274BD1EFA242300AFFE67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CD74C7D41EFB55B700C6195F /* ChoosePsParameterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePsParameterViewController.h; sourceTree = "<group>"; };
+		CD74C7D51EFB55B700C6195F /* ChoosePsParameterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePsParameterViewController.m; sourceTree = "<group>"; };
 		CD7D5EA21E4AB4BF0082CF37 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CD7D5EA81E4AB60E0082CF37 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -317,8 +317,8 @@
 		CD3552751EC0181700B33545 /* parameterInImage */ = {
 			isa = PBXGroup;
 			children = (
-				CD3552761EC0185A00B33545 /* ParameterInImageViewController.h */,
-				CD3552771EC0185A00B33545 /* ParameterInImageViewController.m */,
+				CD5274891EF75C8900AFFE67 /* TestViewController.h */,
+				CD52748A1EF75C8900AFFE67 /* TestViewController.m */,
 			);
 			name = parameterInImage;
 			sourceTree = "<group>";
@@ -351,7 +351,6 @@
 		CD35529F1EC021DD00B33545 /* otherControll */ = {
 			isa = PBXGroup;
 			children = (
-				CD5274881EF75C7400AFFE67 /* temp */,
 				CD169EB31ED2F06B002FB25E /* temperatureControl */,
 				CD3552AC1EC1F08F00B33545 /* loadMotor */,
 				CD3552A81EC14E2700B33545 /* gearControll */,
@@ -395,15 +394,6 @@
 				CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */,
 			);
 			name = loadMotor;
-			sourceTree = "<group>";
-		};
-		CD5274881EF75C7400AFFE67 /* temp */ = {
-			isa = PBXGroup;
-			children = (
-				CD5274891EF75C8900AFFE67 /* TestViewController.h */,
-				CD52748A1EF75C8900AFFE67 /* TestViewController.m */,
-			);
-			name = temp;
 			sourceTree = "<group>";
 		};
 		CD5274901EF7C72000AFFE67 /* img */ = {
@@ -458,6 +448,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD74C7D31EFB559100C6195F /* choosePsParameter */ = {
+			isa = PBXGroup;
+			children = (
+				CD74C7D41EFB55B700C6195F /* ChoosePsParameterViewController.h */,
+				CD74C7D51EFB55B700C6195F /* ChoosePsParameterViewController.m */,
+			);
+			name = choosePsParameter;
+			sourceTree = "<group>";
+		};
 		CD7D5E9D1E4AB27A0082CF37 /* mainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +487,7 @@
 		CD7D5ED91E4ABF600082CF37 /* changeTrend */ = {
 			isa = PBXGroup;
 			children = (
+				CD74C7D31EFB559100C6195F /* choosePsParameter */,
 				CD7D5EE91E4AC0470082CF37 /* WSLineChartView */,
 				CD7D5EDA1E4ABFBA0082CF37 /* TendencyChartViewController.h */,
 				CD7D5EDB1E4ABFBA0082CF37 /* TendencyChartViewController.m */,
@@ -944,7 +944,6 @@
 				CD5274B61EFA1FDA00AFFE67 /* ARLineChartContentView.m in Sources */,
 				CDF2F1621E5689C500A499AE /* UIButton+AFNetworking.m in Sources */,
 				CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */,
-				CD3552781EC0185A00B33545 /* ParameterInImageViewController.m in Sources */,
 				CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */,
 				CDF2EF671E55443E00A499AE /* MethodControlViewController.m in Sources */,
 				CD35529C1EC021AB00B33545 /* WMProgressView.m in Sources */,
@@ -999,6 +998,7 @@
 				CD35529B1EC021AB00B33545 /* WMMenuView.m in Sources */,
 				CD5274B51EFA1FDA00AFFE67 /* ARLineChartCommon.m in Sources */,
 				CD7FFDB71E3E3894003DE455 /* main.m in Sources */,
+				CD74C7D61EFB55B700C6195F /* ChoosePsParameterViewController.m in Sources */,
 				CD35529A1EC021AB00B33545 /* WMMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

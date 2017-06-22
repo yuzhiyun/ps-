@@ -16,7 +16,7 @@
 #import "JsonUtil.h"
 #import "Alert.h"
 #import "Parameter.h"
-#import "ParameterInImageViewController.h"
+//#import "ParameterInImageViewController.h"
 #import "DataBaseNSUserDefaults.h"
 
 #define ARC4RANDOM_MAX      0x100000000
@@ -39,7 +39,7 @@
     isChartAddedToSuperView=false;
     self.title=@"变化趋势";
     dataSource = [NSMutableArray array];
-    rect = CGRectMake(5, 40,
+    rect = CGRectMake(50, 100,
                       self.view.frame.size.width - 5 - 5,
                       self.view.frame.size.height - 30-20-self.tabBarController.tabBar.frame.size.height);
     
@@ -180,10 +180,10 @@
     return UIInterfaceOrientationLandscapeRight;
 }
 - (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
+
 
 
 @end

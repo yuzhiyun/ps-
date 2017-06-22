@@ -12,7 +12,7 @@
 #import "JsonUtil.h"
 #import "Alert.h"
 #import "Parameter.h"
-#import "ParameterInImageViewController.h"
+//#import "ParameterInImageViewController.h"
 #import "DataBaseNSUserDefaults.h"
 #import "TestViewController.h"
 @interface TestViewController ()
@@ -29,8 +29,6 @@
     [super viewDidLoad];
     [self setTitle:@"请横屏查看，以免图像变形"];
     [self loadData];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
