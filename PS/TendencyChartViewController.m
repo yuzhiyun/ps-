@@ -9,8 +9,8 @@
 #import "TendencyChartViewController.h"
 #import "WSLineChartView.h"
 #import "AppDelegate.h"
-#import "ARLineChartView.h"
-#import "ARLineChartCommon.h"
+//#import "ARLineChartView.h"
+//#import "ARLineChartCommon.h"
 #import "AppDelegate.h"
 #import "AFNetworking.h"
 #import "JsonUtil.h"
@@ -22,7 +22,7 @@
 #define ARC4RANDOM_MAX      0x100000000
 @interface TendencyChartViewController ()
 
-@property (strong, nonatomic) ARLineChartView *lineChartView;
+//@property (strong, nonatomic) ARLineChartView *lineChartView;
 @end
 
 @implementation TendencyChartViewController{
@@ -72,7 +72,7 @@
     }
     
     //首先填充101个数据到表格中，使得图表的横坐标能够显示0——100的范围
-    for(int i=0;i<101;i++){
+    /*for(int i=0;i<101;i++){
         RLLineChartItem *item = [[RLLineChartItem alloc] init];
         item.xValue = i;
         //item.y1Value = nil;
@@ -80,11 +80,11 @@
         [dataSource addObject:item];
     }
     self.lineChartView = [[ARLineChartView alloc] initWithFrame:rect dataSource:dataSource xTitle:@"" y1Title: @"" y2Title:@"" desc1:@"" desc2:@""];
-    [self.view addSubview:self.lineChartView];
+    [self.view addSubview:self.lineChartView];*/
     //显示参数名称
     self.mUILabelP1Key.text=[NSString stringWithFormat:@"%@ ( %@ ) :" ,parameter1,unit1];
     self.mUILabelP2Key.text=[NSString stringWithFormat:@"%@ ( %@ ) :" ,parameter2,unit2];
-    [self loadData];
+    //[self loadData];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -102,6 +102,7 @@
 */
 
 //获取参数
+/*
 -(void) loadData{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
     //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=1
@@ -146,7 +147,7 @@
                     [self.view addSubview:self.lineChartView];
                     isChartAddedToSuperView=true;
                 }else{
-                    */
+ 
                     if(index>100){
                         index=0;
                         [dataSource removeAllObjects];
@@ -212,7 +213,7 @@
     
     
 }
-
+*/
 - (BOOL)shouldAutorotate
 {
     return NO;

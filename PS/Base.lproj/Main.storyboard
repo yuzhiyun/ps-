@@ -863,10 +863,10 @@
             </objects>
             <point key="canvasLocation" x="4433" y="2042"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Trend View Controller-->
         <scene sceneID="FCJ-Fe-pDp">
             <objects>
-                <viewController id="FK8-aF-7rc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeTrendViewController" id="FK8-aF-7rc" customClass="ChangeTrendViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zVL-IY-aOe"/>
                         <viewControllerLayoutGuide type="bottom" id="aIk-d5-959"/>
@@ -879,7 +879,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEy-o9-RUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6128.8000000000002" y="2164.7676161919044"/>
+            <point key="canvasLocation" x="5273" y="2043"/>
         </scene>
         <!--Other Controller Page View Controller-->
         <scene sceneID="rbR-wC-rSu">
@@ -1270,7 +1270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMS-kS-J5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5414" y="2988"/>
+            <point key="canvasLocation" x="5066" y="2963"/>
         </scene>
         <!--Temperature Control View Controller-->
         <scene sceneID="CXD-1J-G4Y">
@@ -1461,7 +1461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1K7-t2-ozv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4392.8000000000002" y="2987.8560719640182"/>
+            <point key="canvasLocation" x="4084" y="2963"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bdI-E1-jJR">
