@@ -78,12 +78,6 @@
 		CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA91E4AB60E0082CF37 /* MainViewController.m */; };
 		CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5ED71E4ABBB50082CF37 /* MeViewController.m */; };
 		CD7D5EDC1E4ABFBA0082CF37 /* TendencyChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EDB1E4ABFBA0082CF37 /* TendencyChartViewController.m */; };
-		CD7D5EEA1E4AC0470082CF37 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD7D5EDD1E4AC0470082CF37 /* SVProgressHUD.bundle */; };
-		CD7D5EEB1E4AC0470082CF37 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EDF1E4AC0470082CF37 /* SVProgressHUD.m */; };
-		CD7D5EEC1E4AC0470082CF37 /* TBActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EE11E4AC0470082CF37 /* TBActivityView.m */; };
-		CD7D5EED1E4AC0470082CF37 /* WSLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EE41E4AC0470082CF37 /* WSLineChartView.m */; };
-		CD7D5EEE1E4AC0470082CF37 /* XAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EE61E4AC0470082CF37 /* XAxisView.m */; };
-		CD7D5EEF1E4AC0470082CF37 /* YAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EE81E4AC0470082CF37 /* YAxisView.m */; };
 		CD7FFDB71E3E3894003DE455 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDB61E3E3894003DE455 /* main.m */; };
 		CD7FFDBA1E3E3894003DE455 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDB91E3E3894003DE455 /* AppDelegate.m */; };
 		CD7FFDBD1E3E3894003DE455 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDBC1E3E3894003DE455 /* ViewController.m */; };
@@ -268,17 +262,6 @@
 		CD7D5ED71E4ABBB50082CF37 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		CD7D5EDA1E4ABFBA0082CF37 /* TendencyChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TendencyChartViewController.h; sourceTree = "<group>"; };
 		CD7D5EDB1E4ABFBA0082CF37 /* TendencyChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TendencyChartViewController.m; sourceTree = "<group>"; };
-		CD7D5EDD1E4AC0470082CF37 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		CD7D5EDE1E4AC0470082CF37 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		CD7D5EDF1E4AC0470082CF37 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		CD7D5EE01E4AC0470082CF37 /* TBActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBActivityView.h; sourceTree = "<group>"; };
-		CD7D5EE11E4AC0470082CF37 /* TBActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBActivityView.m; sourceTree = "<group>"; };
-		CD7D5EE31E4AC0470082CF37 /* WSLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLineChartView.h; sourceTree = "<group>"; };
-		CD7D5EE41E4AC0470082CF37 /* WSLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLineChartView.m; sourceTree = "<group>"; };
-		CD7D5EE51E4AC0470082CF37 /* XAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAxisView.h; sourceTree = "<group>"; };
-		CD7D5EE61E4AC0470082CF37 /* XAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAxisView.m; sourceTree = "<group>"; };
-		CD7D5EE71E4AC0470082CF37 /* YAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAxisView.h; sourceTree = "<group>"; };
-		CD7D5EE81E4AC0470082CF37 /* YAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAxisView.m; sourceTree = "<group>"; };
 		CD7FFDB21E3E3894003DE455 /* PS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7FFDB61E3E3894003DE455 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD7FFDB81E3E3894003DE455 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -686,39 +669,11 @@
 			children = (
 				CD74C7D71EFE409500C6195F /* AAChartKit */,
 				CD74C7D31EFB559100C6195F /* choosePsParameter */,
-				CD7D5EE91E4AC0470082CF37 /* WSLineChartView */,
 				CD7D5EDA1E4ABFBA0082CF37 /* TendencyChartViewController.h */,
 				CD7D5EDB1E4ABFBA0082CF37 /* TendencyChartViewController.m */,
 			);
 			name = changeTrend;
 			sourceTree = "<group>";
-		};
-		CD7D5EE21E4AC0470082CF37 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				CD7D5EDD1E4AC0470082CF37 /* SVProgressHUD.bundle */,
-				CD7D5EDE1E4AC0470082CF37 /* SVProgressHUD.h */,
-				CD7D5EDF1E4AC0470082CF37 /* SVProgressHUD.m */,
-				CD7D5EE01E4AC0470082CF37 /* TBActivityView.h */,
-				CD7D5EE11E4AC0470082CF37 /* TBActivityView.m */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		CD7D5EE91E4AC0470082CF37 /* WSLineChartView */ = {
-			isa = PBXGroup;
-			children = (
-				CD7D5EE21E4AC0470082CF37 /* SVProgressHUD */,
-				CD7D5EE31E4AC0470082CF37 /* WSLineChartView.h */,
-				CD7D5EE41E4AC0470082CF37 /* WSLineChartView.m */,
-				CD7D5EE51E4AC0470082CF37 /* XAxisView.h */,
-				CD7D5EE61E4AC0470082CF37 /* XAxisView.m */,
-				CD7D5EE71E4AC0470082CF37 /* YAxisView.h */,
-				CD7D5EE81E4AC0470082CF37 /* YAxisView.m */,
-			);
-			name = WSLineChartView;
-			path = /schoolCon/RongCloudDemo/../../Applications/WSLineChart/WSLineChartView;
-			sourceTree = "<absolute>";
 		};
 		CD7FFDA91E3E3894003DE455 = {
 			isa = PBXGroup;
@@ -1117,7 +1072,6 @@
 				CD5274A91EF7C72000AFFE67 /* xiaoyuan_1@2x.png in Resources */,
 				CD67B4A11F069AE00032F477 /* AAHighchartsMore.js in Resources */,
 				CD5274AA1EF7C72000AFFE67 /* selected2.png in Resources */,
-				CD7D5EEA1E4AC0470082CF37 /* SVProgressHUD.bundle in Resources */,
 				CD5274A81EF7C72000AFFE67 /* xiaoyuan@2x.png in Resources */,
 				CD67B49C1F069AE00032F477 /* AAChartKit.podspec in Resources */,
 				CD7FFDC01E3E3894003DE455 /* Main.storyboard in Resources */,
@@ -1186,18 +1140,15 @@
 				CD67B4A71F069AE00032F477 /* AAChart.m in Sources */,
 				CD67B4991F069AE00032F477 /* AAChartView.m in Sources */,
 				CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */,
-				CD7D5EED1E4AC0470082CF37 /* WSLineChartView.m in Sources */,
 				CD3552A31EC0222500B33545 /* OtherControllerPageViewController.m in Sources */,
 				CD67B4981F069AE00032F477 /* AAChartModel.m in Sources */,
 				CDF2F1631E5689C500A499AE /* UIImageView+AFNetworking.m in Sources */,
 				CDF2F1641E5689C500A499AE /* UIProgressView+AFNetworking.m in Sources */,
-				CD7D5EEB1E4AC0470082CF37 /* SVProgressHUD.m in Sources */,
 				CD7D5EA41E4AB4BF0082CF37 /* LoginViewController.m in Sources */,
 				CDF2F1571E5689C500A499AE /* AFHTTPRequestOperationManager.m in Sources */,
 				CD67B4A81F069AE00032F477 /* AAColumn.m in Sources */,
 				CD67B49B1F069AE00032F477 /* AAOptionsConstructor.m in Sources */,
 				CDF2EFCC1E5547CB00A499AE /* DataBaseNSUserDefaults.m in Sources */,
-				CD7D5EEF1E4AC0470082CF37 /* YAxisView.m in Sources */,
 				CD67B4B01F069AE00032F477 /* AAOptions3d.m in Sources */,
 				CD67B4B21F069AE00032F477 /* AAPlotLinesElement.m in Sources */,
 				CDF2F1581E5689C500A499AE /* AFHTTPSessionManager.m in Sources */,
@@ -1206,7 +1157,6 @@
 				CD67B4A51F069AE00032F477 /* AAAreaspline.m in Sources */,
 				CD3552A71EC023AB00B33545 /* MotorViewController.m in Sources */,
 				CDF2F1651E5689C500A499AE /* UIRefreshControl+AFNetworking.m in Sources */,
-				CD7D5EEC1E4AC0470082CF37 /* TBActivityView.m in Sources */,
 				CD67B4B31F069AE00032F477 /* AAPlotOptions.m in Sources */,
 				CDF2F15C1E5689C500A499AE /* AFURLRequestSerialization.m in Sources */,
 				CD35529E1EC021AB00B33545 /* WMPageController.m in Sources */,
@@ -1216,7 +1166,6 @@
 				CD7FFDBA1E3E3894003DE455 /* AppDelegate.m in Sources */,
 				CD3552AB1EC14E6300B33545 /* GearViewController.m in Sources */,
 				CDF2EFCD1E5547CB00A499AE /* Toast.m in Sources */,
-				CD7D5EEE1E4AC0470082CF37 /* XAxisView.m in Sources */,
 				CD67B4A91F069AE00032F477 /* AADataLabels.m in Sources */,
 				CDF2EFD11E555A2700A499AE /* Parameter.m in Sources */,
 				CDF2F15F1E5689C500A499AE /* AFNetworkActivityIndicatorManager.m in Sources */,

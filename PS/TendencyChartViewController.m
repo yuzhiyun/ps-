@@ -7,7 +7,7 @@
 //
 
 #import "TendencyChartViewController.h"
-#import "WSLineChartView.h"
+//#import "WSLineChartView.h"
 #import "AppDelegate.h"
 //#import "ARLineChartView.h"
 //#import "ARLineChartCommon.h"

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "Parameter.h"
 #import "Alert.h"
+#import "ChangeTrendViewController.h"
 @interface ChoosePsParameterViewController ()
 
 @end
@@ -97,18 +98,29 @@
 
 #pragma mark 确认参数
 - (IBAction)ok:(id)sender {
+    /*
     if([@"" isEqualToString:p_id1]||[@"" isEqualToString:p_id2]){
         [Alert showMessageAlert:@"请选好两个参数" view:self];
     }
     else{
+    */
+        ChangeTrendViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeTrendViewController"];
+        
+        
+        [self presentViewController:nextPage animated:YES completion:^{
+            NSLog(@"第二个页面跳转成功！");
+        }];
+
+        /*
         TendencyChartViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"TendencyChartViewController"];
         nextPage->p_id1=p_id1;
         nextPage->p_id2=p_id2;
         [self presentViewController:nextPage animated:YES completion:^{
             NSLog(@"第二个页面跳转成功！");
         }];
+        */
 
-    }
+    //}
 }
 
 @end

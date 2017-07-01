@@ -7,88 +7,148 @@
 //
 
 #import "ChangeTrendViewController.h"
-//#import "AAChartKit.h"
-@interface ChangeTrendViewController ()
+#import "AAChartKit.h"
+#import "AppDelegate.h"
+#import "AFNetworking.h"
+#import "JsonUtil.h"
+#import "Alert.h"
+#import "Parameter.h"
+#import "DataBaseNSUserDefaults.h"
 
+@interface ChangeTrendViewController ()
+@property(nonatomic,strong)AAChartModel *chartModel;
+@property(nonatomic,strong)AAChartView *chartView;
 @end
 
 @implementation ChangeTrendViewController{
-    //AAChartModel *chartModel;
-    //AAChartView *chartView;
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self configTheChartView];
 }
-/*
--(void)configTheChartView:(NSString *)chartType{
+-(void)configTheChartView{
     self.chartView = [[AAChartView alloc]init];
     self.view.backgroundColor = [UIColor whiteColor];
     self.chartView.frame = CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-220);
     self.chartView.contentHeight = self.view.frame.size.height-220;
     [self.view addSubview:self.chartView];
+    //NSArray array=
+    NSMutableArray *mutableArray=[[NSMutableArray alloc]init];
+    [mutableArray addObject:@20];
+    [mutableArray addObject:@23];
+    [mutableArray addObject:@25];
+    NSArray *array = [NSArray arrayWithArray:mutableArray]; // mutableArray为NSMutableArray类型
     self.chartModel= AAObject(AAChartModel)
-    .chartTypeSet(chartType)
-    .titleSet(@"编程语言热度")
-    .subtitleSet(@"虚拟数据")
+    .chartTypeSet(@"line")
+    .titleSet(@"台驾参数变化趋势")
+    .subtitleSet(@"")
     .pointHollowSet(true)
     .categoriesSet(@[@"Java",@"Swift",@"Python",@"Ruby", @"PHP",@"Go",@"C",@"C#",@"C++",@"Perl",@"R",@"MATLAB",@"SQL",@"100"])
     .yAxisTitleSet(@"摄氏度")
     .seriesSet(@[
                  AAObject(AASeriesElement)
                  .nameSet(@"2017")
-                 .dataSet(@[@45,@88,@49,@43,@65,@56,@47,@28,@49,@44,@89,@55]),
+                 .dataSet(array),
                  
                  AAObject(AASeriesElement)
                  .nameSet(@"2018")
-                 .dataSet(@[@31,@22,@33,@54,@35,@36,@27,@38,@39,@54,@41,@29]),
+                 .dataSet(@[@31,@22,@33]),
                  
                  AAObject(AASeriesElement)
                  .nameSet(@"2019")
-                 .dataSet(@[@11,@12,@13,@14,@15,@16,@17,@18,@19,@33,@56,@39]),
+                 .dataSet(@[@11,@12,@13]),
                  
                  AAObject(AASeriesElement)
                  .nameSet(@"2020")
-                 .dataSet(@[@21,@22,@24,@27,@25,@26,@37,@28,@49,@56,@31,@11]),
+                 .dataSet(@[@24,@26,@24]),
+                 
+                 AAObject(AASeriesElement)
+                 .nameSet(@"2021")
+                 .dataSet(@[@30,@40,@24]),
                  ]
-               )
-    //    //标示线的设置
-    //    .yPlotLinesSet(@[AAObject(AAPlotLinesElement)
-    //                     .colorSet(@"#F05353")//颜色值(16进制)
-    //                     .dashStyleSet(@"Dash")//样式：Dash,Dot,Solid等,默认Solid
-    //                     .widthSet(@(1)) //标示线粗细
-    //                     .valueSet(@(20)) //所在位置
-    //                     .zIndexSet(@(1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
-    //                     .labelSet(@{@"text":@"标示线1",@"x":@(0),@"style":@{@"color":@"#33bdfd"}})//这里其实也可以像AAPlotLinesElement这样定义个对象来赋值（偷点懒直接用了字典，最会终转为js代码，可参考https://www.hcharts.cn/docs/basic-plotLines来写字典）
-    //                     ,AAObject(AAPlotLinesElement)
-    //                     .colorSet(@"#33BDFD")
-    //                     .dashStyleSet(@"Dash")
-    //                     .widthSet(@(1))
-    //                     .valueSet(@(40))
-    //                     .labelSet(@{@"text":@"标示线2",@"x":@(0),@"style":@{@"color":@"#33bdfd"}})
-    //                     ,AAObject(AAPlotLinesElement)
-    //                     .colorSet(@"#ADFF2F")
-    //                     .dashStyleSet(@"Dash")
-    //                     .widthSet(@(1))
-    //                     .valueSet(@(60))
-    //                     .labelSet(@{@"text":@"标示线3",@"x":@(0),@"style":@{@"color":@"#33bdfd"}})
-    //                     ]
-    //                   )
-    //    //Y轴最大值
-    //    .yMaxSet(@(100))
-    //    //Y轴最小值
-    //    .yMinSet(@(1))
-    //    //是否允许Y轴坐标值小数
-    //    .yAllowDecimalsSet(NO)
-    //    //指定y轴坐标
-    //    .yTickPositionsSet(@[@(0),@(25),@(50),@(75),@(100)])
-    ;
+               );
     [self.chartView aa_drawChartWithChartModel:_chartModel];
 }
-*/
+/*
+//获取参数
+-(void) loadData{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/showParameter.html?psid=10
+    NSString *urlString= [NSString stringWithFormat:@"%@/showParameter.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    // 请求参数
+    NSDictionary *parameters = @{ @"psid": [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                  };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        //NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                [mAllDataFromServer removeAllObjects];
+                NSArray *array=[doc objectForKey:@"data"];
+                for(NSDictionary *item in array){
+                    Parameter *model=[[Parameter alloc]init];
+                    model.p_id=item[@"p_id"];
+                    model.p_name=item [@"p_name"];
+                    model.p_value=item[@"p_value"];
+                    model.p_unit=item[@"p_unit"];
+                    [mAllDataFromServer addObject:model
+                     ];
+                }
+                //保存以便在显示参数曲线的时候用于选择参数
+                AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+                myDelegate.allParamatersArray =mAllDataFromServer;
+                [mUITableView reloadData];
+                
+                //模拟1秒后（
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self loadData];
+                });
+                
+                
+                
+                
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+        //模拟1秒后（
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self loadData];
+        });
+        
+    }];
+    
+    
+}*/
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
