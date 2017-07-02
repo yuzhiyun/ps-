@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "Parameter.h"
 #import "Alert.h"
+#import "SelectParametersTableViewController.h"
 #import "ChangeTrendViewController.h"
 @interface ChoosePsParameterViewController ()
 
@@ -104,7 +105,7 @@
     }
     else{
     */
-        ChangeTrendViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeTrendViewController"];
+        SelectParametersTableViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"SelectParametersTableViewController"];
         
         
         [self presentViewController:nextPage animated:YES completion:^{

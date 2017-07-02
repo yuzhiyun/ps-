@@ -16,7 +16,7 @@
     if (self) {
         self.chartType = AAChartTypeColumn;
         self.animationType = AAChartAnimationTypeSwing;//默认使用jQuery easing的'swing'效果
-        self.animationDuration = @500;//默认动画时长为500毫秒
+        self.animationDuration = @10;//默认动画时长为500毫秒
         self.subtitleAlign = AAChartSubtitleAlignTypeLeft;
         self.pointHollow =NO;
         self.inverted = NO;
@@ -41,7 +41,6 @@
         self.borderRadius = @0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
         self.markerRadius = @6;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
         self.yAllowDecimals = YES; //默认y轴显示小数
-        
     }
     return self;
 }
