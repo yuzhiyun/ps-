@@ -73,6 +73,7 @@
 		CD67B4BB1F069AE00032F477 /* AAXAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67B4951F069AE00032F477 /* AAXAxis.m */; };
 		CD67B4BC1F069AE00032F477 /* AAYAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67B4971F069AE00032F477 /* AAYAxis.m */; };
 		CD67B4C51F08E38B0032F477 /* SelectParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67B4C41F08E38B0032F477 /* SelectParametersTableViewController.m */; };
+		CD67B4CA1F0940F00032F477 /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67B4C91F0940F00032F477 /* AlarmTableViewController.m */; };
 		CD74C7DA1EFE40F200C6195F /* ChangeTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74C7D91EFE40F200C6195F /* ChangeTrendViewController.m */; };
 		CD7D5EA41E4AB4BF0082CF37 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA31E4AB4BF0082CF37 /* LoginViewController.m */; };
 		CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7D5EA91E4AB60E0082CF37 /* MainViewController.m */; };
@@ -251,6 +252,8 @@
 		CD67B4BE1F069E6C0032F477 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CD67B4C31F08E38B0032F477 /* SelectParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectParametersTableViewController.h; sourceTree = "<group>"; };
 		CD67B4C41F08E38B0032F477 /* SelectParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectParametersTableViewController.m; sourceTree = "<group>"; };
+		CD67B4C81F0940F00032F477 /* AlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewController.h; sourceTree = "<group>"; };
+		CD67B4C91F0940F00032F477 /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
 		CD74C7D81EFE40F200C6195F /* ChangeTrendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeTrendViewController.h; sourceTree = "<group>"; };
 		CD74C7D91EFE40F200C6195F /* ChangeTrendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeTrendViewController.m; sourceTree = "<group>"; };
 		CD7D5EA21E4AB4BF0082CF37 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -634,6 +637,15 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		CD67B4C71F0940890032F477 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				CD67B4C81F0940F00032F477 /* AlarmTableViewController.h */,
+				CD67B4C91F0940F00032F477 /* AlarmTableViewController.m */,
+			);
+			name = Alarm;
+			sourceTree = "<group>";
+		};
 		CD74C7D71EFE409500C6195F /* AAChartKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +780,7 @@
 		CDF2EF641E55442900A499AE /* methodControl */ = {
 			isa = PBXGroup;
 			children = (
+				CD67B4C71F0940890032F477 /* Alarm */,
 				CDF2EFD31E555E9300A499AE /* CmdHistory */,
 				CDF2EF651E55443E00A499AE /* MethodControlViewController.h */,
 				CDF2EF661E55443E00A499AE /* MethodControlViewController.m */,
@@ -1159,6 +1172,7 @@
 				CDF2EFCE1E5547CB00A499AE /* MBProgressHUD.m in Sources */,
 				CD67B4A51F069AE00032F477 /* AAAreaspline.m in Sources */,
 				CD3552A71EC023AB00B33545 /* MotorViewController.m in Sources */,
+				CD67B4CA1F0940F00032F477 /* AlarmTableViewController.m in Sources */,
 				CDF2F1651E5689C500A499AE /* UIRefreshControl+AFNetworking.m in Sources */,
 				CD67B4B31F069AE00032F477 /* AAPlotOptions.m in Sources */,
 				CDF2F15C1E5689C500A499AE /* AFURLRequestSerialization.m in Sources */,

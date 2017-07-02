@@ -54,7 +54,6 @@
     mutableArray2=[[NSMutableArray alloc]init];
     mutableArray3=[[NSMutableArray alloc]init];
     mutableArray4=[[NSMutableArray alloc]init];
-    
     mutableXAsixArray=[[NSMutableArray alloc]init];
     count=50;
     //横坐标固定为0-100

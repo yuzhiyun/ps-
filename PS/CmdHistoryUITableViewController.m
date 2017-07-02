@@ -13,6 +13,7 @@
 #import "Alert.h"
 #import "Parameter.h"
 #import "CmdHistory.h"
+#import "AlarmTableViewController.h"
 #import "DataBaseNSUserDefaults.h"
 @interface CmdHistoryUITableViewController ()
 
@@ -42,11 +43,29 @@
     mAllDataFromServer=[[NSMutableArray alloc]init];
     
     [self loadData];
+    //自定义导航左右按钮
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"报警信息" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemPressed:)];
+    
+    [rightButton setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:17], UITextAttributeFont, [UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem=rightButton;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+/**
+ *  重载右边导航按钮的事件
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)rightBarButtonItemPressed:(id)sender
+{
+    
+    AlarmTableViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"AlarmTableViewController"];
+    nextPage.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:nextPage animated:YES];
 }
 
 #pragma mark - Table view data source
