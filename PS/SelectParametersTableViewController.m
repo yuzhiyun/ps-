@@ -76,6 +76,7 @@
     }else if ([dataSelectedParameters count]<=4){
     
         ChangeTrendViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeTrendViewController"];
+        nextPage->dataSelectedParameters=dataSelectedParameters;
         nextPage.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:nextPage animated:YES];
     }else{

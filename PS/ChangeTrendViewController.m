@@ -20,8 +20,10 @@
 @property(nonatomic,strong)AAChartView *chartView;
 @end
 @implementation ChangeTrendViewController{
-    NSMutableArray *mutableKeysArray;
     
+
+    NSMutableArray *allDataFromServer;
+    NSMutableArray *mutableKeysArray;
     NSMutableArray *mutableArray1;
     NSMutableArray *mutableArray2;
     NSMutableArray *mutableArray3;
@@ -32,13 +34,20 @@
     Boolean flag;
     //横坐标数量
     int count;
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"传递过来的dataSelectedLinkman的大小 %d",[dataSelectedParameters count]);
     flag=false;
     // Do any additional setup after loading the view.
+    
+    allDataFromServer=[[NSMutableArray alloc]init];
+    //填充allDataFromServer
+    for(int i=0;i<[dataSelectedParameters count];i++){
+        NSMutableArray  *temp=[[NSMutableArray alloc]init];
+        [allDataFromServer addObject:temp];
+    }
     mutableKeysArray=[[NSMutableArray alloc]init];
     
     mutableArray1=[[NSMutableArray alloc]init];
@@ -60,8 +69,8 @@
     if(!flag){
         self.chartView = [[AAChartView alloc]init];
         self.view.backgroundColor = [UIColor whiteColor];
-        self.chartView.frame = CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-220);
-        self.chartView.contentHeight = self.view.frame.size.height-220;
+        self.chartView.frame = CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height);
+        self.chartView.contentHeight = self.view.frame.size.height-150;
         [self.view addSubview:self.chartView];
     }
     NSArray *array1 = [NSArray arrayWithArray:mutableArray1]; // mutableArray为NSMutableArray类型
@@ -70,44 +79,21 @@
     NSArray *array4 = [NSArray arrayWithArray:mutableArray4]; // mutableArray为NSMutableArray类型
     
     NSArray *xAsixArray = [NSArray arrayWithArray:mutableXAsixArray]; // mutableArray为NSMutableArray类型
-    /*
-     typedef NS_ENUM(NSInteger,AAChartAnimationType){
-     AAChartAnimationTypeLinear =0,
-     AAChartAnimationTypeSwing,
-     AAChartAnimationTypeEaseInQuad,
-     AAChartAnimationTypeEaseOutQuad,
-     AAChartAnimationTypeEaseInOutQuad,
-     AAChartAnimationTypeEaseInCubic,
-     AAChartAnimationTypeEaseOutCubic,
-     AAChartAnimationTypeEaseInOutCubic,
-     AAChartAnimationTypeEaseInQuart,
-     AAChartAnimationTypeEaseOutQuart,
-     AAChartAnimationTypeEaseInOutQuart,
-     AAChartAnimationTypeEaseInQuint,
-     AAChartAnimationTypeEaseOutQuint,
-     AAChartAnimationTypeEaseInOutQuint,
-     AAChartAnimationTypeEaseInExpo,
-     AAChartAnimationTypeEaseOutExpo,
-     AAChartAnimationTypeEaseInOutExpo,
-     AAChartAnimationTypeEaseInSine,
-     AAChartAnimationTypeEaseOutSine,
-     AAChartAnimationTypeEaseInOutSine,
-     AAChartAnimationTypeEaseInCirc,
-     AAChartAnimationTypeEaseOutCirc,
-     AAChartAnimationTypeEaseInOutCirc,
-     AAChartAnimationTypeEaseInElastic,
-     AAChartAnimationTypeEaseOutElastic,
-     AAChartAnimationTypeEaseInOutElastic,
-     AAChartAnimationTypeEaseInBack,
-     AAChartAnimationTypeEaseOutBack,
-     AAChartAnimationTypeEaseInOutBack,
-     AAChartAnimationTypeEaseInBounce,
-     AAChartAnimationTypeEaseOutBounce,
-     AAChartAnimationTypeEaseInOutBounce,
-     };
-     
+    
 
-     */
+    //配置seriesSet
+    NSMutableArray *mutableSeriesSet=[[NSMutableArray alloc]init];
+    
+    for(int i=0;i<[allDataFromServer count];i++){
+        
+        AASeriesElement *element=[[AASeriesElement alloc]init];
+        element.name=[mutableKeysArray  objectAtIndex:i];
+        element.data=[allDataFromServer objectAtIndex:i];
+        
+        [mutableSeriesSet addObject:element];
+    }
+    NSArray *seriesSet = [NSArray arrayWithArray:mutableSeriesSet];
+    
     self.chartModel= AAObject(AAChartModel)
     .chartTypeSet(@"line")
     .animationTypeSet(AAChartAnimationTypeEaseOutBounce)
@@ -115,26 +101,10 @@
     .subtitleSet(@"")
     .pointHollowSet(true)
     .categoriesSet(xAsixArray)
-    .yAxisTitleSet(@"摄氏度")
+    .yAxisTitleSet(@" ")
     .markerRadiusSet(@1)
-    .seriesSet(@[
-                 AAObject(AASeriesElement)
-                 .nameSet([mutableKeysArray objectAtIndex:0])
-                 .dataSet(array1),
-                 
-                 AAObject(AASeriesElement)
-                 .nameSet([mutableKeysArray objectAtIndex:1])
-                 .dataSet(array2),
-                 
-                 AAObject(AASeriesElement)
-                 .nameSet([mutableKeysArray objectAtIndex:2])
-                 .dataSet(array3),
-                 
-                 AAObject(AASeriesElement)
-                 .nameSet([mutableKeysArray objectAtIndex:3])
-                 .dataSet(array4),
-                 ]
-               );
+    .seriesSet(seriesSet);
+
     if(!flag){
         [self.chartView aa_drawChartWithChartModel:_chartModel];
         flag=true;
@@ -173,42 +143,34 @@
             
                 //[mAllDataFromServer removeAllObjects];
                 NSArray *array=[doc objectForKey:@"data"];
-                /*
-                for(NSDictionary *item in array){
-                    Parameter *model=[[Parameter alloc]init];
-                    model.p_id=item[@"p_id"];
-                    model.p_name=item [@"p_name"];
-                    model.p_value=item[@"p_value"];
-                    model.p_unit=item[@"p_unit"];
-                    //[mAllDataFromServer addObject:model
-                     ];
+                for(int i=0;i<[dataSelectedParameters count];i++){
+                    Parameter *model = [dataSelectedParameters objectAtIndex:i];
+                    for(NSDictionary *item in array){
+                        if( [model.p_id isEqualToString: item[@"p_id"]]){
+                            //记录需要的参数名称
+                            [mutableKeysArray addObject:item[@"p_name"]];
+                            //记录参数对应的数值
+                            NSMutableArray *valueArray=[allDataFromServer objectAtIndex:i];
+                            [valueArray addObject:[NSNumber numberWithInteger:[item[@"p_value"]integerValue]]];
+                            
+                            
+                        }
+                    }
                 }
-                */
-                for(int i=0;i<4;i++){
-                    NSDictionary *item =[array objectAtIndex:i];
-                    [mutableKeysArray addObject:item[@"p_name"]];
+                //控制横坐标个数小于count
+                NSMutableArray *valueArray=[allDataFromServer objectAtIndex:0];
+                if([valueArray count]>=count){
+                    for(int i=0;i<[allDataFromServer count];i++){
+                        
+                        NSMutableArray *valueArray=[allDataFromServer objectAtIndex:i];
+                        [valueArray removeAllObjects];
+                    }
                 }
-                //NSNumber *intNumber = [NSNumber numberWithInteger:[a integerValue]];
-                //NSNumber *intNumber = [NSNumber numberWithInteger:[a integerValue]];
-                if([mutableArray1 count]>=count){
-                    [mutableArray1 removeAllObjects];
-                    [mutableArray2 removeAllObjects];
-                    [mutableArray3 removeAllObjects];
-                    [mutableArray4 removeAllObjects];
-                    
-                }
-                    
-                [mutableArray1 addObject:[NSNumber numberWithInteger:[[array objectAtIndex:0][@"p_value"] integerValue]]];
-                [mutableArray2 addObject:[NSNumber numberWithInteger:[[array objectAtIndex:1][@"p_value"]integerValue]]];
-                [mutableArray3 addObject:[NSNumber numberWithInteger:[[array objectAtIndex:2][@"p_value"]integerValue]]];
-                [mutableArray4 addObject:[NSNumber numberWithInteger:[[array objectAtIndex:3][@"p_value"]integerValue]]];
-                
-                
-                //}
+
                 [self configTheChartView];
                 //模拟1秒后（
                 
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self loadData];
                 });
                 

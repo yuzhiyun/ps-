@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangeTrendViewController : UIViewController
+@interface ChangeTrendViewController : UIViewController{
+
+
+@public
+    NSMutableArray *dataSelectedParameters;
+}
+
+
 
 @end
