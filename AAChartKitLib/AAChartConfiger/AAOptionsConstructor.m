@@ -10,7 +10,7 @@
 #import "AAOptionsConstructor.h"
 
 @implementation AAOptionsConstructor
-+(AAOptions *)configColumnAndBarAndSoONChartOptionsWithAAChartModel:(AAChartModel *)chartModel{
++(AAOptions *)configureChartOptionsWithAAChartModel:(AAChartModel *)chartModel{
     
     NSArray *chartAnimationTypeArr =@[
                                       @"linear",
@@ -61,7 +61,6 @@
                   .enabledSet(chartModel.options3dEnable)
                   .alphaSet(@-15)
                   );
-    
     
     AATitle *title = AAObject(AATitle)
     .textSet(chartModel.title)//标题文本内容
@@ -124,7 +123,6 @@
     AAMarker *marker =AAObject(AAMarker)
     .radiusSet(chartModel.markerRadius)//曲线连接点半径，默认是4
     .symbolSet(chartModel.symbol)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
-    
     ;
     
     if (chartModel.pointHollow==YES) {
@@ -235,8 +233,5 @@
     ;
     return options;
 }
-
-
-
 
 @end

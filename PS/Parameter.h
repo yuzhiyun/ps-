@@ -19,4 +19,7 @@
 @property (nonatomic,copy)NSNumber *p_value;
 @property (nonatomic,copy)NSNumber *p_color;
 @property (nonatomic,copy)NSNumber *update_date;
+//查看报警那里用到的属性
+@property (nonatomic,copy)NSString *de_state;
+
 @end

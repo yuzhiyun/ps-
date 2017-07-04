@@ -110,6 +110,7 @@
     }
     else
         [self.chartView aa_refreshChartWithChartModel:_chartModel];
+        //[self.chartView aa_onlyRefreshTheChartDataWithChartModel:_chartModel];
 }
 
 //获取参数

@@ -88,14 +88,6 @@
 		CD7FFDDB1E3E3894003DE455 /* PSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDDA1E3E3894003DE455 /* PSUITests.m */; };
 		CD7FFDEB1E3E3B09003DE455 /* ParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */; };
 		CDF2EF671E55443E00A499AE /* MethodControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EF661E55443E00A499AE /* MethodControlViewController.m */; };
-		CDF2EFB11E5547AB00A499AE /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CDF2EFA01E5547AB00A499AE /* MJRefresh.bundle */; };
-		CDF2EFB21E5547AB00A499AE /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFA31E5547AB00A499AE /* MJRefreshBaseView.m */; };
-		CDF2EFB31E5547AB00A499AE /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFA51E5547AB00A499AE /* MJRefreshConst.m */; };
-		CDF2EFB41E5547AB00A499AE /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFA71E5547AB00A499AE /* MJRefreshFooterView.m */; };
-		CDF2EFB51E5547AB00A499AE /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFA91E5547AB00A499AE /* MJRefreshHeaderView.m */; };
-		CDF2EFB61E5547AB00A499AE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFAB1E5547AB00A499AE /* UIScrollView+MJRefresh.m */; };
-		CDF2EFB71E5547AB00A499AE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFAD1E5547AB00A499AE /* UIView+MJExtension.m */; };
-		CDF2EFB81E5547AB00A499AE /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFAF1E5547AB00A499AE /* UIScrollView+MJExtension.m */; };
 		CDF2EFCA1E5547CB00A499AE /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFBA1E5547CB00A499AE /* Alert.m */; };
 		CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFBD1E5547CB00A499AE /* JsonUtil.m */; };
 		CDF2EFCC1E5547CB00A499AE /* DataBaseNSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFC11E5547CB00A499AE /* DataBaseNSUserDefaults.m */; };
@@ -282,22 +274,6 @@
 		CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterTableViewController.m; sourceTree = "<group>"; };
 		CDF2EF651E55443E00A499AE /* MethodControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodControlViewController.h; sourceTree = "<group>"; };
 		CDF2EF661E55443E00A499AE /* MethodControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodControlViewController.m; sourceTree = "<group>"; };
-		CDF2EFA01E5547AB00A499AE /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
-		CDF2EFA11E5547AB00A499AE /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
-		CDF2EFA21E5547AB00A499AE /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
-		CDF2EFA31E5547AB00A499AE /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
-		CDF2EFA41E5547AB00A499AE /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
-		CDF2EFA51E5547AB00A499AE /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
-		CDF2EFA61E5547AB00A499AE /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
-		CDF2EFA71E5547AB00A499AE /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
-		CDF2EFA81E5547AB00A499AE /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
-		CDF2EFA91E5547AB00A499AE /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
-		CDF2EFAA1E5547AB00A499AE /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
-		CDF2EFAB1E5547AB00A499AE /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
-		CDF2EFAC1E5547AB00A499AE /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
-		CDF2EFAD1E5547AB00A499AE /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		CDF2EFAE1E5547AB00A499AE /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
-		CDF2EFAF1E5547AB00A499AE /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
 		CDF2EFBA1E5547CB00A499AE /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		CDF2EFBB1E5547CB00A499AE /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
 		CDF2EFBD1E5547CB00A499AE /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
@@ -697,7 +673,6 @@
 				CD35528E1EC021AB00B33545 /* WMPageController */,
 				CDF2F12F1E5689C500A499AE /* AFNetworking */,
 				CDF2EFC91E5547CB00A499AE /* utility */,
-				CDF2EFB01E5547AB00A499AE /* MJRefresh */,
 				CD7FFDB41E3E3894003DE455 /* PS */,
 				CD7FFDCE1E3E3894003DE455 /* PSTests */,
 				CD7FFDD91E3E3894003DE455 /* PSUITests */,
@@ -787,30 +762,6 @@
 			);
 			name = methodControl;
 			sourceTree = "<group>";
-		};
-		CDF2EFB01E5547AB00A499AE /* MJRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFA01E5547AB00A499AE /* MJRefresh.bundle */,
-				CDF2EFA11E5547AB00A499AE /* MJRefresh.h */,
-				CDF2EFA21E5547AB00A499AE /* MJRefreshBaseView.h */,
-				CDF2EFA31E5547AB00A499AE /* MJRefreshBaseView.m */,
-				CDF2EFA41E5547AB00A499AE /* MJRefreshConst.h */,
-				CDF2EFA51E5547AB00A499AE /* MJRefreshConst.m */,
-				CDF2EFA61E5547AB00A499AE /* MJRefreshFooterView.h */,
-				CDF2EFA71E5547AB00A499AE /* MJRefreshFooterView.m */,
-				CDF2EFA81E5547AB00A499AE /* MJRefreshHeaderView.h */,
-				CDF2EFA91E5547AB00A499AE /* MJRefreshHeaderView.m */,
-				CDF2EFAA1E5547AB00A499AE /* UIScrollView+MJRefresh.h */,
-				CDF2EFAB1E5547AB00A499AE /* UIScrollView+MJRefresh.m */,
-				CDF2EFAC1E5547AB00A499AE /* UIView+MJExtension.h */,
-				CDF2EFAD1E5547AB00A499AE /* UIView+MJExtension.m */,
-				CDF2EFAE1E5547AB00A499AE /* UIScrollView+MJExtension.h */,
-				CDF2EFAF1E5547AB00A499AE /* UIScrollView+MJExtension.m */,
-			);
-			name = MJRefresh;
-			path = "/Users/qifeiqin/Downloads/MJRefresh-master/MJRefreshExample/MJRefreshExample/MJRefresh";
-			sourceTree = "<absolute>";
 		};
 		CDF2EFBC1E5547CB00A499AE /* messageViewController */ = {
 			isa = PBXGroup;
@@ -1084,7 +1035,6 @@
 				CD5274A01EF7C72000AFFE67 /* daxue@2x.png in Resources */,
 				CD5274A71EF7C72000AFFE67 /* wode_1@2x.png in Resources */,
 				CD7FFDC21E3E3894003DE455 /* Assets.xcassets in Resources */,
-				CDF2EFB11E5547AB00A499AE /* MJRefresh.bundle in Resources */,
 				CD5274A91EF7C72000AFFE67 /* xiaoyuan_1@2x.png in Resources */,
 				CD67B4A11F069AE00032F477 /* AAHighchartsMore.js in Resources */,
 				CD5274AA1EF7C72000AFFE67 /* selected2.png in Resources */,
@@ -1125,24 +1075,20 @@
 				CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */,
 				CDF2EF671E55443E00A499AE /* MethodControlViewController.m in Sources */,
 				CD35529C1EC021AB00B33545 /* WMProgressView.m in Sources */,
-				CDF2EFB81E5547AB00A499AE /* UIScrollView+MJExtension.m in Sources */,
 				CD67B4BB1F069AE00032F477 /* AAXAxis.m in Sources */,
 				CD67B4BA1F069AE00032F477 /* AATooltip.m in Sources */,
 				CDF2F1601E5689C500A499AE /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				CD169EB61ED2F09C002FB25E /* TemperatureControlViewController.m in Sources */,
 				CD67B4A31F069AE00032F477 /* AAAnimation.m in Sources */,
 				CDF2F1611E5689C500A499AE /* UIAlertView+AFNetworking.m in Sources */,
-				CDF2EFB41E5547AB00A499AE /* MJRefreshFooterView.m in Sources */,
 				CD3552AF1EC1F0C100B33545 /* LoadMotorViewController.m in Sources */,
 				CDF2EFD91E55613800A499AE /* CmdHistory.m in Sources */,
 				CDF2F15D1E5689C500A499AE /* AFURLResponseSerialization.m in Sources */,
 				CD67B4BC1F069AE00032F477 /* AAYAxis.m in Sources */,
 				CD67B4B81F069AE00032F477 /* AASubtitle.m in Sources */,
 				CD67B4B61F069AE00032F477 /* AASpline.m in Sources */,
-				CDF2EFB31E5547AB00A499AE /* MJRefreshConst.m in Sources */,
 				CDF2EFCA1E5547CB00A499AE /* Alert.m in Sources */,
 				CD67B4C51F08E38B0032F477 /* SelectParametersTableViewController.m in Sources */,
-				CDF2EFB21E5547AB00A499AE /* MJRefreshBaseView.m in Sources */,
 				CDF2F1661E5689C500A499AE /* UIWebView+AFNetworking.m in Sources */,
 				CD74C7DA1EFE40F200C6195F /* ChangeTrendViewController.m in Sources */,
 				CDF2F1561E5689C500A499AE /* AFHTTPRequestOperation.m in Sources */,
@@ -1151,8 +1097,6 @@
 				CDF2F15B1E5689C500A499AE /* AFURLConnectionOperation.m in Sources */,
 				CD67B4AB1F069AE00032F477 /* AALabels.m in Sources */,
 				CD67B4B71F069AE00032F477 /* AAStyle.m in Sources */,
-				CDF2EFB71E5547AB00A499AE /* UIView+MJExtension.m in Sources */,
-				CDF2EFB51E5547AB00A499AE /* MJRefreshHeaderView.m in Sources */,
 				CD67B4A71F069AE00032F477 /* AAChart.m in Sources */,
 				CD67B4991F069AE00032F477 /* AAChartView.m in Sources */,
 				CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */,
@@ -1186,7 +1130,6 @@
 				CD67B4A91F069AE00032F477 /* AADataLabels.m in Sources */,
 				CDF2EFD11E555A2700A499AE /* Parameter.m in Sources */,
 				CDF2F15F1E5689C500A499AE /* AFNetworkActivityIndicatorManager.m in Sources */,
-				CDF2EFB61E5547AB00A499AE /* UIScrollView+MJRefresh.m in Sources */,
 				CD35529D1EC021AB00B33545 /* WMScrollView.m in Sources */,
 				CD67B4AA1F069AE00032F477 /* AAItemStyle.m in Sources */,
 				CDF2F1591E5689C500A499AE /* AFNetworkReachabilityManager.m in Sources */,
