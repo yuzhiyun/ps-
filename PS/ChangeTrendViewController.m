@@ -72,10 +72,7 @@
         self.chartView.contentHeight = self.view.frame.size.height-150;
         [self.view addSubview:self.chartView];
     }
-    NSArray *array1 = [NSArray arrayWithArray:mutableArray1]; // mutableArray为NSMutableArray类型
-    NSArray *array2 = [NSArray arrayWithArray:mutableArray2]; // mutableArray为NSMutableArray类型
-    NSArray *array3 = [NSArray arrayWithArray:mutableArray3]; // mutableArray为NSMutableArray类型
-    NSArray *array4 = [NSArray arrayWithArray:mutableArray4]; // mutableArray为NSMutableArray类型
+
     
     NSArray *xAsixArray = [NSArray arrayWithArray:mutableXAsixArray]; // mutableArray为NSMutableArray类型
     
@@ -109,8 +106,8 @@
         flag=true;
     }
     else
-        [self.chartView aa_refreshChartWithChartModel:_chartModel];
-        //[self.chartView aa_onlyRefreshTheChartDataWithChartModel:_chartModel];
+        //[self.chartView aa_refreshChartWithChartModel:_chartModel];
+        [self.chartView aa_onlyRefreshTheChartDataWithChartModel:_chartModel];
 }
 
 //获取参数
