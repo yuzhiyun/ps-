@@ -100,7 +100,6 @@
     .yAxisTitleSet(@" ")
     .markerRadiusSet(@1)
     .seriesSet(seriesSet);
-
     if(!flag){
         [self.chartView aa_drawChartWithChartModel:_chartModel];
         flag=true;

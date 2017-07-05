@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "DataBaseNSUserDefaults.h"
 #import "LoginViewController.h"
+#import "FileListTableViewController.h"
 @interface MeViewController ()
 
 @end
@@ -43,6 +44,15 @@
     LoginViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     nextPage.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:nextPage animated:YES];
+    
+}
+- (IBAction)enterFileList:(id)sender {
+    
+    FileListTableViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"FileListTableViewController"];
+    
+    nextPage.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:nextPage animated:YES];
+    
     
 }
 

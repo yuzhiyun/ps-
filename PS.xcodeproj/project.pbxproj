@@ -17,6 +17,8 @@
 		CD3552A71EC023AB00B33545 /* MotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552A61EC023AB00B33545 /* MotorViewController.m */; };
 		CD3552AB1EC14E6300B33545 /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552AA1EC14E6300B33545 /* GearViewController.m */; };
 		CD3552AF1EC1F0C100B33545 /* LoadMotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */; };
+		CD4EB4391F0D3EC70005512E /* FileListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4EB4381F0D3EC70005512E /* FileListTableViewController.m */; };
+		CD4EB43D1F0D413A0005512E /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4EB43C1F0D413A0005512E /* File.m */; };
 		CD52748B1EF75C8900AFFE67 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD52748A1EF75C8900AFFE67 /* TestViewController.m */; };
 		CD52749F1EF7C72000AFFE67 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5274911EF7C72000AFFE67 /* avatar.png */; };
 		CD5274A01EF7C72000AFFE67 /* daxue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5274931EF7C72000AFFE67 /* daxue@2x.png */; };
@@ -153,6 +155,10 @@
 		CD3552AA1EC14E6300B33545 /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
 		CD3552AD1EC1F0C100B33545 /* LoadMotorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMotorViewController.h; sourceTree = "<group>"; };
 		CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMotorViewController.m; sourceTree = "<group>"; };
+		CD4EB4371F0D3EC70005512E /* FileListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListTableViewController.h; sourceTree = "<group>"; };
+		CD4EB4381F0D3EC70005512E /* FileListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListTableViewController.m; sourceTree = "<group>"; };
+		CD4EB43B1F0D41250005512E /* File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		CD4EB43C1F0D413A0005512E /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		CD5274891EF75C8900AFFE67 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		CD52748A1EF75C8900AFFE67 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		CD5274911EF7C72000AFFE67 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
@@ -456,6 +462,25 @@
 			name = loadMotor;
 			sourceTree = "<group>";
 		};
+		CD4EB4361F0D3E880005512E /* fileList */ = {
+			isa = PBXGroup;
+			children = (
+				CD4EB43A1F0D40E60005512E /* file */,
+				CD4EB4371F0D3EC70005512E /* FileListTableViewController.h */,
+				CD4EB4381F0D3EC70005512E /* FileListTableViewController.m */,
+			);
+			name = fileList;
+			sourceTree = "<group>";
+		};
+		CD4EB43A1F0D40E60005512E /* file */ = {
+			isa = PBXGroup;
+			children = (
+				CD4EB43B1F0D41250005512E /* File.h */,
+				CD4EB43C1F0D413A0005512E /* File.m */,
+			);
+			name = file;
+			sourceTree = "<group>";
+		};
 		CD5274901EF7C72000AFFE67 /* img */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,6 +719,7 @@
 		CD7FFDB41E3E3894003DE455 /* PS */ = {
 			isa = PBXGroup;
 			children = (
+				CD4EB4361F0D3E880005512E /* fileList */,
 				CD35529F1EC021DD00B33545 /* otherControll */,
 				CDF2EF641E55442900A499AE /* methodControl */,
 				CD7D5ED91E4ABF600082CF37 /* changeTrend */,
@@ -1098,6 +1124,7 @@
 				CD67B4AB1F069AE00032F477 /* AALabels.m in Sources */,
 				CD67B4B71F069AE00032F477 /* AAStyle.m in Sources */,
 				CD67B4A71F069AE00032F477 /* AAChart.m in Sources */,
+				CD4EB43D1F0D413A0005512E /* File.m in Sources */,
 				CD67B4991F069AE00032F477 /* AAChartView.m in Sources */,
 				CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */,
 				CD3552A31EC0222500B33545 /* OtherControllerPageViewController.m in Sources */,
@@ -1142,6 +1169,7 @@
 				CD67B49A1F069AE00032F477 /* AAJsonConverter.m in Sources */,
 				CD67B4B41F069AE00032F477 /* AASeries.m in Sources */,
 				CD35529A1EC021AB00B33545 /* WMMenuItem.m in Sources */,
+				CD4EB4391F0D3EC70005512E /* FileListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
