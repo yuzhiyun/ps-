@@ -17,6 +17,8 @@
 		CD3552A71EC023AB00B33545 /* MotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552A61EC023AB00B33545 /* MotorViewController.m */; };
 		CD3552AB1EC14E6300B33545 /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552AA1EC14E6300B33545 /* GearViewController.m */; };
 		CD3552AF1EC1F0C100B33545 /* LoadMotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */; };
+		CD4A97241F111D6000243F68 /* RecordedParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4A97231F111D6000243F68 /* RecordedParameterTableViewController.m */; };
+		CD4A97291F11280700243F68 /* RecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4A97281F11280700243F68 /* RecordTableViewController.m */; };
 		CD4EB4391F0D3EC70005512E /* FileListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4EB4381F0D3EC70005512E /* FileListTableViewController.m */; };
 		CD4EB43D1F0D413A0005512E /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4EB43C1F0D413A0005512E /* File.m */; };
 		CD52748B1EF75C8900AFFE67 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD52748A1EF75C8900AFFE67 /* TestViewController.m */; };
@@ -155,6 +157,10 @@
 		CD3552AA1EC14E6300B33545 /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
 		CD3552AD1EC1F0C100B33545 /* LoadMotorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMotorViewController.h; sourceTree = "<group>"; };
 		CD3552AE1EC1F0C100B33545 /* LoadMotorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMotorViewController.m; sourceTree = "<group>"; };
+		CD4A97221F111D6000243F68 /* RecordedParameterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordedParameterTableViewController.h; sourceTree = "<group>"; };
+		CD4A97231F111D6000243F68 /* RecordedParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordedParameterTableViewController.m; sourceTree = "<group>"; };
+		CD4A97271F11280700243F68 /* RecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTableViewController.h; sourceTree = "<group>"; };
+		CD4A97281F11280700243F68 /* RecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewController.m; sourceTree = "<group>"; };
 		CD4EB4371F0D3EC70005512E /* FileListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListTableViewController.h; sourceTree = "<group>"; };
 		CD4EB4381F0D3EC70005512E /* FileListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListTableViewController.m; sourceTree = "<group>"; };
 		CD4EB43B1F0D41250005512E /* File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
@@ -462,6 +468,33 @@
 			name = loadMotor;
 			sourceTree = "<group>";
 		};
+		CD4A97211F111CF500243F68 /* createData */ = {
+			isa = PBXGroup;
+			children = (
+				CD4A97221F111D6000243F68 /* RecordedParameterTableViewController.h */,
+				CD4A97231F111D6000243F68 /* RecordedParameterTableViewController.m */,
+			);
+			name = createData;
+			sourceTree = "<group>";
+		};
+		CD4A97251F11277A00243F68 /* recordParameters */ = {
+			isa = PBXGroup;
+			children = (
+				CD4A97261F1127C600243F68 /* parameters */,
+				CD4A97211F111CF500243F68 /* createData */,
+			);
+			name = recordParameters;
+			sourceTree = "<group>";
+		};
+		CD4A97261F1127C600243F68 /* parameters */ = {
+			isa = PBXGroup;
+			children = (
+				CD4A97271F11280700243F68 /* RecordTableViewController.h */,
+				CD4A97281F11280700243F68 /* RecordTableViewController.m */,
+			);
+			name = parameters;
+			sourceTree = "<group>";
+		};
 		CD4EB4361F0D3E880005512E /* fileList */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +752,7 @@
 		CD7FFDB41E3E3894003DE455 /* PS */ = {
 			isa = PBXGroup;
 			children = (
+				CD4A97251F11277A00243F68 /* recordParameters */,
 				CD4EB4361F0D3E880005512E /* fileList */,
 				CD35529F1EC021DD00B33545 /* otherControll */,
 				CDF2EF641E55442900A499AE /* methodControl */,
@@ -1001,7 +1035,7 @@
 				TargetAttributes = {
 					CD7FFDB11E3E3894003DE455 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4YFU9633V4;
+						DevelopmentTeam = 65965BYU24;
 						ProvisioningStyle = Automatic;
 					};
 					CD7FFDCA1E3E3894003DE455 = {
@@ -1092,6 +1126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD67B4AC1F069AE00032F477 /* AALegend.m in Sources */,
+				CD4A97241F111D6000243F68 /* RecordedParameterTableViewController.m in Sources */,
 				CDF2EFD61E555EB800A499AE /* CmdHistoryUITableViewController.m in Sources */,
 				CD7FFDBD1E3E3894003DE455 /* ViewController.m in Sources */,
 				CD67B4AE1F069AE00032F477 /* AAMarker.m in Sources */,
@@ -1127,6 +1162,7 @@
 				CD4EB43D1F0D413A0005512E /* File.m in Sources */,
 				CD67B4991F069AE00032F477 /* AAChartView.m in Sources */,
 				CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */,
+				CD4A97291F11280700243F68 /* RecordTableViewController.m in Sources */,
 				CD3552A31EC0222500B33545 /* OtherControllerPageViewController.m in Sources */,
 				CD67B4981F069AE00032F477 /* AAChartModel.m in Sources */,
 				CDF2F1631E5689C500A499AE /* UIImageView+AFNetworking.m in Sources */,
@@ -1317,7 +1353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4YFU9633V4;
+				DEVELOPMENT_TEAM = 65965BYU24;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PS/PrefixHeader.pch";
 				INFOPLIST_FILE = PS/Info.plist;
@@ -1334,7 +1370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4YFU9633V4;
+				DEVELOPMENT_TEAM = 65965BYU24;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PS/PrefixHeader.pch";
 				INFOPLIST_FILE = PS/Info.plist;

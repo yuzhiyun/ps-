@@ -42,7 +42,7 @@
     self.tableView.contentInset=UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     
     //自定义导航左右按钮
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"示意图" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemPressed:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"其他" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemPressed:)];
     
     [rightButton setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:17], UITextAttributeFont, [UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem=rightButton;
@@ -117,12 +117,65 @@
  */
 -(void)rightBarButtonItemPressed:(id)sender
 {
-    TestViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"TestViewController"];
-    [self presentViewController:nextPage animated:YES completion:^{
-        NSLog(@"第二个页面跳转成功！");
-    }];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"请选择操作"
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIBarStyleDefault;
+    
+    
+    [actionSheet addButtonWithTitle:@"查看参数示意图"];
+    [actionSheet addButtonWithTitle:@"查看文件列表"];
+    [actionSheet addButtonWithTitle:@"记录试验数据"];
+    [actionSheet addButtonWithTitle:@"查看试验数据"];
+    
+    
+    
+    [actionSheet showInView:self.view];
+    
+
+}
+
+//UIActionSheet对话框选择监听事件
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    
+    //NSLog(@"选择对话框监听事件,您选择了%i",buttonIndex);
+    UIViewController *nextPage;
+    //NSLog([grade objectAtIndex:buttonIndex]);
+    //if(buttonIndex!=[mDataSemester count]-1)
+    switch (buttonIndex) {
+
+
+        case 1:
+            nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"TestViewController"];
+            [self presentViewController:nextPage animated:YES completion:^{
+                NSLog(@"第二个页面跳转成功！");
+            }];
+            break;
+        case 2:
+            //文件列表
+            nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"FileListTableViewController"];
+            nextPage.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:nextPage animated:YES];            break;
+        case 3:
+            [self recordParameter];
+            break;
+        case 4:
+            nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"RecordedParameterTableViewController"];
+            nextPage.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:nextPage animated:YES];
+            break;
+        default:
+            break;
+    }
     
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -133,6 +186,10 @@
     return [mAllDataFromServer count];
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -232,4 +289,52 @@
     
     
 }
+//记录参数
+-(void) recordParameter{
+    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //http://ps.leideng.org/index.php/User/App/recordTest.html?psid=10
+    NSString *urlString= [NSString stringWithFormat:@"%@/recordTest.html",myDelegate.ipString];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    
+    // 请求参数
+    NSDictionary *parameters = @{ @"psid": [DataBaseNSUserDefaults getData:@"selectedPS"]
+                                  };
+    [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSString *result=[JsonUtil DataTOjsonString:responseObject];
+        NSLog(@"***************返回结果***********************");
+        //NSLog(result);
+        NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=[[NSError alloc]init];
+        NSDictionary *doc= [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if(doc!=nil){
+            NSLog(@"*****doc不为空***********");
+            //判断code 是不是0
+            if([@"0" isEqualToString:[doc objectForKey:@"code"]])
+            {
+                
+                [Alert showMessageAlert:@"记录参数成功" view:self];
+            }
+            else{
+                [Alert showMessageAlert:[doc objectForKey:@"msg"] view:self];
+            }
+        }
+        else
+            NSLog(@"*****doc空***********");
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorUser=[error.userInfo objectForKey:NSLocalizedDescriptionKey];
+        if(error.code==-1009)
+            errorUser=@"主人，似乎没有网络喔！";
+        [Alert showMessageAlert:errorUser view:self];
+            }];
+    
+    
+}
+
 @end
