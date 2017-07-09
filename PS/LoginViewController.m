@@ -141,9 +141,6 @@
             NSLog(@"*****doc不为空***********");
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]]){
-                
-                
-               
                 NSArray *array=[doc objectForKey:@"data"];
                 UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                                   initWithTitle:@"请选择台驾"
@@ -200,8 +197,6 @@
         MainViewController *nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
         //跳转
         [self.navigationController pushViewController:nextPage animated:YES];
-         
-         
     }
 }
 

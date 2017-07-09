@@ -130,7 +130,7 @@
     [actionSheet addButtonWithTitle:@"查看文件列表"];
     [actionSheet addButtonWithTitle:@"记录试验数据"];
     [actionSheet addButtonWithTitle:@"查看试验数据"];
-    
+    [actionSheet addButtonWithTitle:@"查看设备报警"];
     
     
     [actionSheet showInView:self.view];
@@ -166,6 +166,11 @@
             break;
         case 4:
             nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"RecordedParameterTableViewController"];
+            nextPage.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:nextPage animated:YES];
+            break;
+        case 5:
+             nextPage= [self.storyboard instantiateViewControllerWithIdentifier:@"AlarmTableViewController"];
             nextPage.hidesBottomBarWhenPushed=YES;
             [self.navigationController pushViewController:nextPage animated:YES];
             break;

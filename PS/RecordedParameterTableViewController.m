@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"点击时间可查看对应数据";
     createDateKeyArray=[[NSMutableArray alloc]init];
     parameterArray=[[NSMutableArray alloc]init];
     

@@ -40,18 +40,23 @@
     else
         [self setSP];
 }
+
+
+
 -(void) setSP{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
     
     NSString *urlString= [NSString stringWithFormat:@"%@/submitGearboxoil.html",myDelegate.ipString];
+
     AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
     // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     //pvalue=44&psid=10&pname=升速箱油温SP
     NSDictionary *parameters = @{
                                  @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"],
-                                 @"pname":@"升速箱油温SP",
-                                 @"pvalue":self.mUITextFieldSP.text
+                                 @"tename":@"设定SP",
+                                 @"tevalue":self.mUITextFieldSP.text,
+                                 @"username":[DataBaseNSUserDefaults getData:@"username"]
                                  };
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -97,16 +102,18 @@
 -(void) setTemperature{
     AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
     //http://ps.leideng.org/index.php/User/App/showGearBoxOil.html?psid=10
-    NSString *urlString= [NSString stringWithFormat:@"%@/submitTemp.html",myDelegate.ipString];
+    NSString *urlString= [NSString stringWithFormat:@"%@/submitGearboxoil.html",myDelegate.ipString];
     AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
     // manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", nil];
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     
     NSDictionary *parameters = @{
                                  @"psid":  [DataBaseNSUserDefaults getData:@"selectedPS"],
-                                 @"pname":@"变速箱油温",
-                                 @"pvalue":self.mUITextFieldTemperature.text
+                                 @"tename":@"设置温度",
+                                 @"tevalue":self.mUITextFieldTemperature.text,
+                                 @"username":[DataBaseNSUserDefaults getData:@"username"]
                                  };
+    
     [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         
