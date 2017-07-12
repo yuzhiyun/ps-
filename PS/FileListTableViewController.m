@@ -65,11 +65,31 @@
     return cell;
 }
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    File *model=[allDataFromServer objectAtIndex:indexPath.row];
     
-    //[self asureAlarm:model.docu_name indexPath.row];
     
-    [self selectFile:model.docu_name position:indexPath.row];
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:nil message:@"确定选择该文件？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok=[UIAlertAction actionWithTitle:@"确认"
+                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                                                   File *model=[allDataFromServer objectAtIndex:indexPath.row];
+                                                   [self selectFile:model.docu_name position:indexPath.row];
+                                                   
+
+                                             
+                                               }];
+    
+    UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"取消"
+                                                   style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                                                       
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    //        信息框添加按键
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+
+    
+    
     
 }
 

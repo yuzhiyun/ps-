@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"选择参数"];
+    [self setTitle:@"绘制曲线"];
     myDelegate = [[UIApplication sharedApplication]delegate];
     
     [self.navigationController.navigationBar setBarTintColor:myDelegate.navigationBarColor];

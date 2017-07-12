@@ -38,6 +38,10 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //    修改下一个界面返回按钮的title，注意这行代码每个页面都要写一遍，不是全局的
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [self.mUITextFieldUsername setText:[DataBaseNSUserDefaults getData:@"username"]];
+    [self.mUITextFieldPasswd setText:[DataBaseNSUserDefaults getData:@"passwd"]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +104,7 @@
             //判断code 是不是0
             if([@"0" isEqualToString:[doc objectForKey:@"code"]]){
                 [DataBaseNSUserDefaults setData: username forkey:@"username"];
+                [DataBaseNSUserDefaults setData: passwd forkey:@"passwd"];
                 [self getPSList];
             }
             else{

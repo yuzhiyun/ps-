@@ -78,7 +78,27 @@
 }
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self setGear:[allDataFromServer objectAtIndex:indexPath.row]] ;
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:nil message:@"确定选择该档位？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok=[UIAlertAction actionWithTitle:@"确认"
+                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                                                   [self setGear:[allDataFromServer objectAtIndex:indexPath.row]] ;
+                                                   
+                                                   
+                                                   
+                                               }];
+    
+    UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"取消"
+                                                   style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                                                       
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    //        信息框添加按键
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+
+    
                          
     
 }
