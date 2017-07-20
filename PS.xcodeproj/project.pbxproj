@@ -91,12 +91,13 @@
 		CD7FFDD01E3E3894003DE455 /* PSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDCF1E3E3894003DE455 /* PSTests.m */; };
 		CD7FFDDB1E3E3894003DE455 /* PSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDDA1E3E3894003DE455 /* PSUITests.m */; };
 		CD7FFDEB1E3E3B09003DE455 /* ParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */; };
+		CD83FA821F20EF8600E02FDA /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = CD83FA721F20EF8600E02FDA /* Alert.m */; };
+		CD83FA831F20EF8600E02FDA /* DataBaseNSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CD83FA751F20EF8600E02FDA /* DataBaseNSUserDefaults.m */; };
+		CD83FA841F20EF8600E02FDA /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CD83FA781F20EF8600E02FDA /* JsonUtil.m */; };
+		CD83FA851F20EF8600E02FDA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CD83FA7B1F20EF8600E02FDA /* MBProgressHUD.m */; };
+		CD83FA861F20EF8600E02FDA /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD83FA7E1F20EF8600E02FDA /* MessageViewController.m */; };
+		CD83FA871F20EF8600E02FDA /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CD83FA811F20EF8600E02FDA /* Toast.m */; };
 		CDF2EF671E55443E00A499AE /* MethodControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EF661E55443E00A499AE /* MethodControlViewController.m */; };
-		CDF2EFCA1E5547CB00A499AE /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFBA1E5547CB00A499AE /* Alert.m */; };
-		CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFBD1E5547CB00A499AE /* JsonUtil.m */; };
-		CDF2EFCC1E5547CB00A499AE /* DataBaseNSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFC11E5547CB00A499AE /* DataBaseNSUserDefaults.m */; };
-		CDF2EFCD1E5547CB00A499AE /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFC41E5547CB00A499AE /* Toast.m */; };
-		CDF2EFCE1E5547CB00A499AE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFC71E5547CB00A499AE /* MBProgressHUD.m */; };
 		CDF2EFD11E555A2700A499AE /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFD01E555A2700A499AE /* Parameter.m */; };
 		CDF2EFD61E555EB800A499AE /* CmdHistoryUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFD51E555EB800A499AE /* CmdHistoryUITableViewController.m */; };
 		CDF2EFD91E55613800A499AE /* CmdHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF2EFD81E55613800A499AE /* CmdHistory.m */; };
@@ -284,18 +285,20 @@
 		CD7FFDDC1E3E3894003DE455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7FFDE91E3E3B09003DE455 /* ParameterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterTableViewController.h; sourceTree = "<group>"; };
 		CD7FFDEA1E3E3B09003DE455 /* ParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterTableViewController.m; sourceTree = "<group>"; };
+		CD83FA711F20EF8600E02FDA /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		CD83FA721F20EF8600E02FDA /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
+		CD83FA741F20EF8600E02FDA /* DataBaseNSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseNSUserDefaults.h; sourceTree = "<group>"; };
+		CD83FA751F20EF8600E02FDA /* DataBaseNSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseNSUserDefaults.m; sourceTree = "<group>"; };
+		CD83FA771F20EF8600E02FDA /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
+		CD83FA781F20EF8600E02FDA /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
+		CD83FA7A1F20EF8600E02FDA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CD83FA7B1F20EF8600E02FDA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CD83FA7D1F20EF8600E02FDA /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		CD83FA7E1F20EF8600E02FDA /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		CD83FA801F20EF8600E02FDA /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
+		CD83FA811F20EF8600E02FDA /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		CDF2EF651E55443E00A499AE /* MethodControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodControlViewController.h; sourceTree = "<group>"; };
 		CDF2EF661E55443E00A499AE /* MethodControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodControlViewController.m; sourceTree = "<group>"; };
-		CDF2EFBA1E5547CB00A499AE /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
-		CDF2EFBB1E5547CB00A499AE /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
-		CDF2EFBD1E5547CB00A499AE /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
-		CDF2EFBE1E5547CB00A499AE /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
-		CDF2EFC01E5547CB00A499AE /* DataBaseNSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseNSUserDefaults.h; sourceTree = "<group>"; };
-		CDF2EFC11E5547CB00A499AE /* DataBaseNSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseNSUserDefaults.m; sourceTree = "<group>"; };
-		CDF2EFC31E5547CB00A499AE /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
-		CDF2EFC41E5547CB00A499AE /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
-		CDF2EFC61E5547CB00A499AE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		CDF2EFC71E5547CB00A499AE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CDF2EFD01E555A2700A499AE /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
 		CDF2EFD21E555A3100A499AE /* Parameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
 		CDF2EFD41E555EB800A499AE /* CmdHistoryUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdHistoryUITableViewController.h; sourceTree = "<group>"; };
@@ -727,10 +730,10 @@
 		CD7FFDA91E3E3894003DE455 = {
 			isa = PBXGroup;
 			children = (
+				CD83FA6F1F20EF8600E02FDA /* utility */,
 				CD67B44F1F069AE00032F477 /* AAChartKitLib */,
 				CD35528E1EC021AB00B33545 /* WMPageController */,
 				CDF2F12F1E5689C500A499AE /* AFNetworking */,
-				CDF2EFC91E5547CB00A499AE /* utility */,
 				CD7FFDB41E3E3894003DE455 /* PS */,
 				CD7FFDCE1E3E3894003DE455 /* PSTests */,
 				CD7FFDD91E3E3894003DE455 /* PSUITests */,
@@ -812,6 +815,73 @@
 			name = showParameter;
 			sourceTree = "<group>";
 		};
+		CD83FA6F1F20EF8600E02FDA /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA701F20EF8600E02FDA /* alert */,
+				CD83FA731F20EF8600E02FDA /* DataBaseNSUserDefaults */,
+				CD83FA761F20EF8600E02FDA /* jsonUtil */,
+				CD83FA791F20EF8600E02FDA /* MBProgressHUD */,
+				CD83FA7C1F20EF8600E02FDA /* messageViewController */,
+				CD83FA7F1F20EF8600E02FDA /* toast */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		CD83FA701F20EF8600E02FDA /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA711F20EF8600E02FDA /* Alert.h */,
+				CD83FA721F20EF8600E02FDA /* Alert.m */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
+		CD83FA731F20EF8600E02FDA /* DataBaseNSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA741F20EF8600E02FDA /* DataBaseNSUserDefaults.h */,
+				CD83FA751F20EF8600E02FDA /* DataBaseNSUserDefaults.m */,
+			);
+			path = DataBaseNSUserDefaults;
+			sourceTree = "<group>";
+		};
+		CD83FA761F20EF8600E02FDA /* jsonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA771F20EF8600E02FDA /* JsonUtil.h */,
+				CD83FA781F20EF8600E02FDA /* JsonUtil.m */,
+			);
+			path = jsonUtil;
+			sourceTree = "<group>";
+		};
+		CD83FA791F20EF8600E02FDA /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA7A1F20EF8600E02FDA /* MBProgressHUD.h */,
+				CD83FA7B1F20EF8600E02FDA /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		CD83FA7C1F20EF8600E02FDA /* messageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA7D1F20EF8600E02FDA /* MessageViewController.h */,
+				CD83FA7E1F20EF8600E02FDA /* MessageViewController.m */,
+			);
+			path = messageViewController;
+			sourceTree = "<group>";
+		};
+		CD83FA7F1F20EF8600E02FDA /* toast */ = {
+			isa = PBXGroup;
+			children = (
+				CD83FA801F20EF8600E02FDA /* Toast.h */,
+				CD83FA811F20EF8600E02FDA /* Toast.m */,
+			);
+			path = toast;
+			sourceTree = "<group>";
+		};
 		CDF2EF641E55442900A499AE /* methodControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,64 +892,6 @@
 			);
 			name = methodControl;
 			sourceTree = "<group>";
-		};
-		CDF2EFBC1E5547CB00A499AE /* messageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFBA1E5547CB00A499AE /* Alert.m */,
-				CDF2EFBB1E5547CB00A499AE /* Alert.h */,
-			);
-			name = messageViewController;
-			sourceTree = "<group>";
-		};
-		CDF2EFBF1E5547CB00A499AE /* jsonUtil */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFBD1E5547CB00A499AE /* JsonUtil.m */,
-				CDF2EFBE1E5547CB00A499AE /* JsonUtil.h */,
-			);
-			name = jsonUtil;
-			sourceTree = "<group>";
-		};
-		CDF2EFC21E5547CB00A499AE /* NSUserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFC01E5547CB00A499AE /* DataBaseNSUserDefaults.h */,
-				CDF2EFC11E5547CB00A499AE /* DataBaseNSUserDefaults.m */,
-			);
-			name = NSUserDefaults;
-			sourceTree = "<group>";
-		};
-		CDF2EFC51E5547CB00A499AE /* toast */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFC31E5547CB00A499AE /* Toast.h */,
-				CDF2EFC41E5547CB00A499AE /* Toast.m */,
-			);
-			name = toast;
-			sourceTree = "<group>";
-		};
-		CDF2EFC81E5547CB00A499AE /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFC61E5547CB00A499AE /* MBProgressHUD.h */,
-				CDF2EFC71E5547CB00A499AE /* MBProgressHUD.m */,
-			);
-			name = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		CDF2EFC91E5547CB00A499AE /* utility */ = {
-			isa = PBXGroup;
-			children = (
-				CDF2EFBC1E5547CB00A499AE /* messageViewController */,
-				CDF2EFBF1E5547CB00A499AE /* jsonUtil */,
-				CDF2EFC21E5547CB00A499AE /* NSUserDefaults */,
-				CDF2EFC51E5547CB00A499AE /* toast */,
-				CDF2EFC81E5547CB00A499AE /* MBProgressHUD */,
-			);
-			name = utility;
-			path = /schoolCon/RongCloudDemo;
-			sourceTree = "<absolute>";
 		};
 		CDF2EFCF1E555A0100A499AE /* paramenter */ = {
 			isa = PBXGroup;
@@ -1131,6 +1143,7 @@
 				CD7FFDBD1E3E3894003DE455 /* ViewController.m in Sources */,
 				CD67B4AE1F069AE00032F477 /* AAMarker.m in Sources */,
 				CDF2F1621E5689C500A499AE /* UIButton+AFNetworking.m in Sources */,
+				CD83FA831F20EF8600E02FDA /* DataBaseNSUserDefaults.m in Sources */,
 				CD67B4B51F069AE00032F477 /* AASeriesElement.m in Sources */,
 				CD7D5EAA1E4AB60E0082CF37 /* MainViewController.m in Sources */,
 				CD7D5ED81E4ABBB50082CF37 /* MeViewController.m in Sources */,
@@ -1148,9 +1161,10 @@
 				CD67B4BC1F069AE00032F477 /* AAYAxis.m in Sources */,
 				CD67B4B81F069AE00032F477 /* AASubtitle.m in Sources */,
 				CD67B4B61F069AE00032F477 /* AASpline.m in Sources */,
-				CDF2EFCA1E5547CB00A499AE /* Alert.m in Sources */,
+				CD83FA861F20EF8600E02FDA /* MessageViewController.m in Sources */,
 				CD67B4C51F08E38B0032F477 /* SelectParametersTableViewController.m in Sources */,
 				CDF2F1661E5689C500A499AE /* UIWebView+AFNetworking.m in Sources */,
+				CD83FA821F20EF8600E02FDA /* Alert.m in Sources */,
 				CD74C7DA1EFE40F200C6195F /* ChangeTrendViewController.m in Sources */,
 				CDF2F1561E5689C500A499AE /* AFHTTPRequestOperation.m in Sources */,
 				CD52748B1EF75C8900AFFE67 /* TestViewController.m in Sources */,
@@ -1161,7 +1175,6 @@
 				CD67B4A71F069AE00032F477 /* AAChart.m in Sources */,
 				CD4EB43D1F0D413A0005512E /* File.m in Sources */,
 				CD67B4991F069AE00032F477 /* AAChartView.m in Sources */,
-				CDF2EFCB1E5547CB00A499AE /* JsonUtil.m in Sources */,
 				CD4A97291F11280700243F68 /* RecordTableViewController.m in Sources */,
 				CD3552A31EC0222500B33545 /* OtherControllerPageViewController.m in Sources */,
 				CD67B4981F069AE00032F477 /* AAChartModel.m in Sources */,
@@ -1171,12 +1184,11 @@
 				CDF2F1571E5689C500A499AE /* AFHTTPRequestOperationManager.m in Sources */,
 				CD67B4A81F069AE00032F477 /* AAColumn.m in Sources */,
 				CD67B49B1F069AE00032F477 /* AAOptionsConstructor.m in Sources */,
-				CDF2EFCC1E5547CB00A499AE /* DataBaseNSUserDefaults.m in Sources */,
 				CD67B4B01F069AE00032F477 /* AAOptions3d.m in Sources */,
+				CD83FA851F20EF8600E02FDA /* MBProgressHUD.m in Sources */,
 				CD67B4B21F069AE00032F477 /* AAPlotLinesElement.m in Sources */,
 				CDF2F1581E5689C500A499AE /* AFHTTPSessionManager.m in Sources */,
 				CD67B4B11F069AE00032F477 /* AAPie.m in Sources */,
-				CDF2EFCE1E5547CB00A499AE /* MBProgressHUD.m in Sources */,
 				CD67B4A51F069AE00032F477 /* AAAreaspline.m in Sources */,
 				CD3552A71EC023AB00B33545 /* MotorViewController.m in Sources */,
 				CD67B4CA1F0940F00032F477 /* AlarmTableViewController.m in Sources */,
@@ -1189,11 +1201,12 @@
 				CDF2F15A1E5689C500A499AE /* AFSecurityPolicy.m in Sources */,
 				CD7FFDBA1E3E3894003DE455 /* AppDelegate.m in Sources */,
 				CD3552AB1EC14E6300B33545 /* GearViewController.m in Sources */,
-				CDF2EFCD1E5547CB00A499AE /* Toast.m in Sources */,
 				CD67B4A91F069AE00032F477 /* AADataLabels.m in Sources */,
 				CDF2EFD11E555A2700A499AE /* Parameter.m in Sources */,
+				CD83FA841F20EF8600E02FDA /* JsonUtil.m in Sources */,
 				CDF2F15F1E5689C500A499AE /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CD35529D1EC021AB00B33545 /* WMScrollView.m in Sources */,
+				CD83FA871F20EF8600E02FDA /* Toast.m in Sources */,
 				CD67B4AA1F069AE00032F477 /* AAItemStyle.m in Sources */,
 				CDF2F1591E5689C500A499AE /* AFNetworkReachabilityManager.m in Sources */,
 				CD67B4B91F069AE00032F477 /* AATitle.m in Sources */,
